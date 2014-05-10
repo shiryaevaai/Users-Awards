@@ -53,10 +53,10 @@
 
         public IEnumerable<Award> GetAllAwards()
         {
-            if (!File.Exists(this._awardsFile))
-            {
-                throw new FileNotFoundException("Входной файл не найден");
-            }
+            //if (!File.Exists(this._awardsFile))
+            //{
+            //    throw new FileNotFoundException("Входной файл не найден");
+            //}
 
             string[] lines = File.ReadAllLines(this._awardsFile);
             foreach (string line in lines)
@@ -150,10 +150,10 @@
 
         public IEnumerable<UsersAward> GetAllUserAwards()
         {
-            if (!File.Exists(this._awards_and_usersFile))
-            {
-                throw new FileNotFoundException("Входной файл не найден");
-            }
+            //if (!File.Exists(this._awards_and_usersFile))
+            //{
+            //    throw new FileNotFoundException("Входной файл не найден");
+            //}
 
             List<UsersAward> res = new List<UsersAward>();
             string[] lines = File.ReadAllLines(this._awards_and_usersFile);

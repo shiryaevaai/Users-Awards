@@ -61,3 +61,12 @@ E:\Epam courses\070514\EpamTask6-1\EpamTask6-1.UserList.DAL.Files\bin\Release\Ep
 E:\Epam courses\070514\EpamTask6-1\EpamTask6-1.UserList.DAL.Files\bin\Release\EpamTask6-1.UserList.DAL.Abstract.pdb
 E:\Epam courses\070514\EpamTask6-1\EpamTask6-1.UserList.DAL.Files\bin\Release\EpamTask6-1.UserList.Entities.pdb
 E:\Epam courses\070514\EpamTask6-1\EpamTask6-1.UserList.DAL.Files\obj\Release\EpamTask6-1.UserList.DAL.Files.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Files\bin\Release\EpamTask6-1.UserList.DAL.Files.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Files\bin\Release\EpamTask6-1.UserList.DAL.Files.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Files\bin\Release\EpamTask6-1.UserList.DAL.Abstract.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Files\bin\Release\EpamTask6-1.UserList.Entities.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Files\bin\Release\EpamTask6-1.UserList.DAL.Abstract.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Files\bin\Release\EpamTask6-1.UserList.Entities.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Files\obj\Release\EpamTask6-1.UserList.DAL.Files.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Files\obj\Release\EpamTask6-1.UserList.DAL.Files.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Files\obj\Release\EpamTask6-1.UserList.DAL.Files.pdb

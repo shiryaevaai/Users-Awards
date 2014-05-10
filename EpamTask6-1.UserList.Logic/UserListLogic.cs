@@ -164,33 +164,13 @@
         }
 
         public void StartCashing()
-        {
-            try
-            {
-                this._cash_award_dao.SetAllAwards(this._save_award_dao.GetAllAwards());
-            }
-            catch
-            {
-                throw new Exception("Не удалось загрузить информацию о наградах. Приложение будет закрыто.");
-            }
+        {           
+           this._cash_award_dao.SetAllAwards(this._save_award_dao.GetAllAwards());            
+            
+           this._cash_award_dao.SetAllUserAwards(this._save_award_dao.GetAllUserAwards());            
 
-            try
-            {
-                this._cash_award_dao.SetAllUserAwards(this._save_award_dao.GetAllUserAwards());
-            }
-            catch
-            {
-                throw new Exception("Не удалось загрузить информацию о наградах пользователей. Приложение будет закрыто.");
-            }
-
-            try
-            {
-                this._cash_user_dao.SetAllUsers(this._save_user_dao.GetAllUsers());
-            }
-            catch
-            {
-                throw new Exception("Не удалось загрузить информацию о пользователях. Приложение будет закрыто.");
-            }
+           this._cash_user_dao.SetAllUsers(this._save_user_dao.GetAllUsers());
+            
         }
 
         public void AwardsCashing()

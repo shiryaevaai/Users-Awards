@@ -62,10 +62,10 @@
 
         public IEnumerable<User> GetAllUsers()
         {
-            if (!File.Exists(this._usersFile))
-            {
-                throw new FileNotFoundException("Входной файл не найден!");
-            }
+            //if (!File.Exists(this._usersFile))
+            //{
+            //    throw new FileNotFoundException("Входной файл не найден!");
+            //}
 
             string[] lines = File.ReadAllLines(this._usersFile);  
             
