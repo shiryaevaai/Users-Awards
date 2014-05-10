@@ -10,122 +10,22 @@
     using EpamTask6_1.UserList.DAL.Abstract;
     using EpamTask6_1.UserList.Entities;
 
-    public class UserListDao : IUserListDao
+    public class AwardListDao : IAwardListDao
     {
         private const char SEPARATOR_CHAR = '▄';
         private const string SEPARATOR_STRING = "▄";
-
-        private const string USERS_FILE = "users.txt";
+        
         private const string AWARDS_FILE = "awards.txt";
         private const string AWARDS_AND_USERS_FILE = "awards_and_users.txt";
-       
-        private string _usersFile;
+
         private string _awardsFile;
         private string _awards_and_usersFile;
 
-        public UserListDao()
-        {           
+        public AwardListDao()
+        {
 
-            this._usersFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, USERS_FILE);
             this._awardsFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AWARDS_FILE);
             this._awards_and_usersFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AWARDS_AND_USERS_FILE);
-        }
-
-        public bool AddUser(User user)
-        {
-            // wrong id, handle exception
-            if (this.GetUser(user.ID) != null)
-            {
-                return false;
-            }
-
-            try
-            {
-                if (!File.Exists(this._usersFile))
-                {
-                    return false;
-                }
-
-                File.AppendAllLines(this._usersFile, new[] { CreateLineFromUser(user) });
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        public User GetUser(Guid id)
-        {
-            return this.GetAllUsers().FirstOrDefault(n => n.ID == id);
-        }
-
-        public IEnumerable<User> GetAllUsers()
-        {
-            if (!File.Exists(this._usersFile))
-            {
-                throw new FileNotFoundException("Входной файл не найден!");
-            }
-
-            string[] lines = File.ReadAllLines(this._usersFile);  
-            
-            // reader, every string 
-            foreach (string line in lines)
-            {
-                var user = CreateUserFromLine(line);
-                if (user != null)
-                {
-                    yield return user;
-                }
-            }
-        }
-
-        public bool DeleteUser(Guid id)
-        {
-            try
-            {
-                if (!File.Exists(this._usersFile))
-                {
-                    return false;
-                }
-
-                var users = this.GetAllUsers()
-                    .Where(n => n.ID != id)
-                    .Select(n => CreateLineFromUser(n));
-                // .Select(CreateLineFromUser);
-
-                File.WriteAllLines(this._usersFile, users);
-
-                // var ua = GetAllUserAwards()
-                //    .Where(n => n.Value.Key == id)
-                //    .Select(n => n);                               
-
-                // return SetAllUserAwards(ua.ToDictionary(n=>n.Key));
-                return true;                
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        public bool SetAllUsers(IEnumerable<User> users)
-        {
-            try
-            {
-                List<string> resLines = new List<string>();
-                foreach (var user in users)
-                {
-                    resLines.Add(CreateLineFromUser(user));
-                }
-
-                File.WriteAllLines(this._usersFile, resLines);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
         }
 
         public bool AddAward(Award award)
@@ -137,7 +37,7 @@
 
             try
             {
-                File.AppendAllLines(this._awardsFile, new[] { CreateLineFromAward(award) }); 
+                File.AppendAllLines(this._awardsFile, new[] { CreateLineFromAward(award) });
                 return true;
             }
             catch
@@ -190,7 +90,7 @@
             }
         }
 
-        public bool AddAwardToUser(Guid userID, Guid awardID) 
+        public bool AddAwardToUser(Guid userID, Guid awardID)
         {
             Guid newID = Guid.NewGuid();
 
@@ -201,7 +101,7 @@
                     return false;
                 }
 
-                File.AppendAllLines(this._awards_and_usersFile, new[] { CreateLineForUsersAward(userID, awardID) }); 
+                File.AppendAllLines(this._awards_and_usersFile, new[] { CreateLineForUsersAward(userID, awardID) });
                 return true;
             }
             catch
@@ -286,7 +186,7 @@
             {
                 return false;
             }
-        }       
+        }
 
         private static string CreateLineForUsersAward(Guid userID, Guid awardID)
         {
@@ -323,28 +223,5 @@
             };
         }
 
-        private static string CreateLineFromUser(User user)
-        {
-            return string.Format(
-                "{0}{3}{1}{3}{2}", 
-                user.ID.ToString(), 
-                user.Name.ToString(),
-                user.DateOfBirth.ToString(), 
-                SEPARATOR_STRING);
-        }
-
-        private static User CreateUserFromLine(string line)
-        {
-            var userFields = line.Split(SEPARATOR_CHAR);
-            if (userFields.Length != 3)
-            {
-                return null;
-            }
-
-            return new User(userFields[1], DateTime.Parse(userFields[2]))
-                {
-                    ID = Guid.Parse(userFields[0]),
-                };
-        }
     }
 }

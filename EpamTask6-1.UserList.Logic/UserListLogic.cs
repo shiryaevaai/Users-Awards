@@ -18,6 +18,10 @@
 
         private IUserListDao _save_user_dao;
 
+        private IAwardListDao _cash_award_dao;
+
+        private IAwardListDao _save_award_dao;
+
         public UserListLogic()
         {
 #if DEBUG
@@ -27,6 +31,8 @@
 #else
             this._save_user_dao = new DAL.Files.UserListDao();
             this._cash_user_dao = new DAL.Fake.UserListDao();
+            this._save_award_dao = new DAL.Files.AwardListDao();
+            this._cash_award_dao = new DAL.Fake.AwardListDao();
             StartCashing();
 #endif
         }
@@ -73,7 +79,7 @@
 
         public bool DeleteUser(User user)
         {
-            if ((this._cash_user_dao.DeleteUser(user.ID))&&(this._cash_user_dao.DeleteUserAwards(user)))
+            if ((this._cash_user_dao.DeleteUser(user.ID))&&(this._cash_award_dao.DeleteUserAwards(user)))
             {                
                 Thread cashThread1 = new Thread(this.UsersCashing);
                 cashThread1.Start();
@@ -92,7 +98,7 @@
         {
             var award = new Award(title);
 
-            if (this._cash_user_dao.AddAward(award))
+            if (this._cash_award_dao.AddAward(award))
             {
                 Thread cashThread = new Thread(this.AwardsCashing);
                 cashThread.Start();
@@ -106,7 +112,7 @@
 
         public bool AddAward(Award award)
         {
-            if (this._cash_user_dao.AddAward(award))
+            if (this._cash_award_dao.AddAward(award))
             {
                 Thread cashThread = new Thread(this.AwardsCashing);
                 cashThread.Start();
@@ -120,17 +126,17 @@
 
         public Award GetAwardByID(Guid id)
         {
-            return this._cash_user_dao.GetAward(id);
+            return this._cash_award_dao.GetAward(id);
         }
 
         public Award[] GetAllAwards()
         {
-            return this._cash_user_dao.GetAllAwards().ToArray(); 
+            return this._cash_award_dao.GetAllAwards().ToArray(); 
         }
 
         public Award[] GetUserAwards(User user)
         {
-            return this._cash_user_dao.GetUserAwards(user).ToArray();
+            return this._cash_award_dao.GetUserAwards(user).ToArray();
         }
 
         public bool AddAwardToUser(Guid userID, Guid awardID) 
@@ -140,12 +146,12 @@
                 throw new ArgumentException("Пользователя с данным ID не существует");
             }
 
-            if (this._cash_user_dao.GetAward(awardID) == null)
+            if (this._cash_award_dao.GetAward(awardID) == null)
            {
                throw new ArgumentException("Награды с данным ID не существует");
            }
 
-            if (this._cash_user_dao.AddAwardToUser(userID, awardID))
+            if (this._cash_award_dao.AddAwardToUser(userID, awardID))
             {
                 Thread cashThread = new Thread(this.UsersAndAwardsCashing);
                 cashThread.Start();
@@ -161,7 +167,7 @@
         {
             try
             {
-                this._cash_user_dao.SetAllAwards(this._save_user_dao.GetAllAwards());
+                this._cash_award_dao.SetAllAwards(this._save_award_dao.GetAllAwards());
             }
             catch
             {
@@ -170,7 +176,7 @@
 
             try
             {
-                this._cash_user_dao.SetAllUserAwards(this._save_user_dao.GetAllUserAwards());
+                this._cash_award_dao.SetAllUserAwards(this._save_award_dao.GetAllUserAwards());
             }
             catch
             {
@@ -189,7 +195,7 @@
 
         public void AwardsCashing()
         {
-            if (!this._save_user_dao.SetAllAwards(this._cash_user_dao.GetAllAwards()))
+            if (!this._save_award_dao.SetAllAwards(this._cash_award_dao.GetAllAwards()))
             {
                 throw new Exception("Не удалось загрузить информацию о наградах. Приложение будет закрыто.");
             }
@@ -205,7 +211,7 @@
 
         public void UsersAndAwardsCashing()
         {
-            if (!this._save_user_dao.SetAllUserAwards(this._cash_user_dao.GetAllUserAwards()))
+            if (!this._save_award_dao.SetAllUserAwards(this._cash_award_dao.GetAllUserAwards()))
             {
                 throw new Exception("Не удалось загрузить информацию о наградах пользователей. Приложение будет закрыто.");
             }

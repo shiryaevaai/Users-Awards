@@ -19,22 +19,22 @@
 
         bool SetAllUsers(IEnumerable<User> users);
 
-        bool AddAward(Award award);
+        //bool AddAward(Award award);
 
-        bool AddAwardToUser(Guid user_id, Guid award_id);
+        //bool AddAwardToUser(Guid user_id, Guid award_id);
 
-        Award GetAward(Guid id);
+        //Award GetAward(Guid id);
 
-        bool DeleteUserAwards(User user);
+        //bool DeleteUserAwards(User user);
 
-        IEnumerable<Award> GetUserAwards(User user);
+        //IEnumerable<Award> GetUserAwards(User user);
 
-        IEnumerable<Award> GetAllAwards();
+        //IEnumerable<Award> GetAllAwards();
 
-        IEnumerable<UsersAward> GetAllUserAwards();
+        //IEnumerable<UsersAward> GetAllUserAwards();
 
-        bool SetAllAwards(IEnumerable<Award> awards);
+        //bool SetAllAwards(IEnumerable<Award> awards);
 
-        bool SetAllUserAwards(IEnumerable<UsersAward> _usersAndAwardsList);  
+        //bool SetAllUserAwards(IEnumerable<UsersAward> _usersAndAwardsList);  
     }
 }
