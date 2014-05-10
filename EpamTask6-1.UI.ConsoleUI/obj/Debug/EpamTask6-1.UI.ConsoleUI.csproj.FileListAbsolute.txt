@@ -1,0 +1,6 @@
+c:\users\анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Debug\EpamTask6-1.UI.ConsoleUI.exe.config
+c:\users\анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Debug\EpamTask6-1.UI.ConsoleUI.exe
+c:\users\анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Debug\EpamTask6-1.UI.ConsoleUI.pdb
+c:\users\анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Debug\EpamTask6-1.UI.ConsoleUI.csprojResolveAssemblyReference.cache
+c:\users\анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Debug\EpamTask6-1.UI.ConsoleUI.exe
+c:\users\анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Debug\EpamTask6-1.UI.ConsoleUI.pdb

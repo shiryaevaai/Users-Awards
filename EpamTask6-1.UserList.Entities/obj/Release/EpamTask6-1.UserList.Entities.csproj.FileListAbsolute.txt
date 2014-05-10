@@ -1,0 +1,20 @@
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\bin\Release\EpamTask6-1.UserList.Entities.dll
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\bin\Release\EpamTask6-1.UserList.Entities.pdb
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.csprojResolveAssemblyReference.cache
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.dll
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.pdb
+C:\Users\user\Desktop\110414\EpamTask6-1\EpamTask6-1.UserList.Entities\bin\Release\EpamTask6-1.UserList.Entities.dll
+C:\Users\user\Desktop\110414\EpamTask6-1\EpamTask6-1.UserList.Entities\bin\Release\EpamTask6-1.UserList.Entities.pdb
+C:\Users\user\Desktop\110414\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\110414\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.dll
+C:\Users\user\Desktop\110414\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.pdb
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\bin\Release\EpamTask6-1.UserList.Entities.dll
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\bin\Release\EpamTask6-1.UserList.Entities.pdb
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.csprojResolveAssemblyReference.cache
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.dll
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.pdb
+G:\Epam courses\New folder\250414\EpamTask6-1\EpamTask6-1.UserList.Entities\bin\Release\EpamTask6-1.UserList.Entities.dll
+G:\Epam courses\New folder\250414\EpamTask6-1\EpamTask6-1.UserList.Entities\bin\Release\EpamTask6-1.UserList.Entities.pdb
+G:\Epam courses\New folder\250414\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.csprojResolveAssemblyReference.cache
+G:\Epam courses\New folder\250414\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.dll
+G:\Epam courses\New folder\250414\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.pdb

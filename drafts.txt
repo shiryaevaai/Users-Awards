@@ -1,0 +1,34 @@
+//public bool AddAwardToUser(Guid userID, Guid awardID)  //???
+        //{
+        //    Guid NewID = Guid.NewGuid();
+        //    try
+        //    {
+        //        File.AppendAllLines(_awards_and_usersFile, new[] { CreateLineForUserAward(NewID, userID, awardID) }); //wrong id, handle exception
+        //        return true;
+        //    }
+        //    catch
+        //    {
+        //        return false;
+        //    }
+        //}
+
+        //private static string CreateLineForUserAward(Guid NewID, Guid userID, Guid awardID)
+        //{
+        //    return string.Format("{0}-{1}-{2}", NewID.ToString(), userID.ToString(), awardID.ToString());
+        //}
+
+
+
+        //private static Award CreateAwardFromLine(string line)
+        //{
+        //    var awardFields = line.Split('-');
+        //    if (awardFields.Length != 2)
+        //    {
+        //        return null;
+        //    }
+
+        //    return new Award(awardFields[1])
+        //    {
+        //        ID = Guid.Parse(awardFields[0]),
+        //    };
+        //}

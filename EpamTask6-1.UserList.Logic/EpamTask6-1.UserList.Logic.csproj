@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{54886C6B-6ED2-49D2-9484-B78D631B7FE7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EpamTask6_1.UserList.Logic</RootNamespace>
+    <AssemblyName>EpamTask6-1.UserList.Logic</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="UserListLogic.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EpamTask6-1.UserList.DAL.Abstract\EpamTask6-1.UserList.DAL.Abstract.csproj">
+      <Project>{50da9c35-ee22-4ac0-a421-f43a04d79794}</Project>
+      <Name>EpamTask6-1.UserList.DAL.Abstract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EpamTask6-1.UserList.DAL.Fake\EpamTask6-1.UserList.DAL.Fake.csproj">
+      <Project>{03b50103-f86e-40f5-9751-7eea709628a8}</Project>
+      <Name>EpamTask6-1.UserList.DAL.Fake</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EpamTask6-1.UserList.DAL.Files\EpamTask6-1.UserList.DAL.Files.csproj">
+      <Project>{a73443fc-2eca-4bfe-8618-9da0a0c26c85}</Project>
+      <Name>EpamTask6-1.UserList.DAL.Files</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EpamTask6-1.UserList.Entities\EpamTask6-1.UserList.Entities.csproj">
+      <Project>{03cfad9e-7ad3-44fb-b1b2-cc7cfa88171b}</Project>
+      <Name>EpamTask6-1.UserList.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

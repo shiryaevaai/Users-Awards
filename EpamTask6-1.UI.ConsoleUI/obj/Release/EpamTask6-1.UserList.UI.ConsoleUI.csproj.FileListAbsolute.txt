@@ -1,0 +1,156 @@
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.exe.config
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.exe
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.pdb
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.dll
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.dll
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.dll
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.dll
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.pdb
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.pdb
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.pdb
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.pdb
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UserList.UI.ConsoleUI.csprojResolveAssemblyReference.cache
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.exe
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.pdb
+C:\Users\user\Desktop\110414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.exe.config
+C:\Users\user\Desktop\110414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.exe
+C:\Users\user\Desktop\110414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.pdb
+C:\Users\user\Desktop\110414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.exe
+C:\Users\user\Desktop\110414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.pdb
+C:\Users\user\Desktop\110414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.dll
+C:\Users\user\Desktop\110414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.dll
+C:\Users\user\Desktop\110414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.dll
+C:\Users\user\Desktop\110414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.dll
+C:\Users\user\Desktop\110414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.pdb
+C:\Users\user\Desktop\110414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.pdb
+C:\Users\user\Desktop\110414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.pdb
+C:\Users\user\Desktop\110414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.pdb
+C:\Users\user\Desktop\110414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UserList.UI.ConsoleUI.csprojResolveAssemblyReference.cache
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.exe.config
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.exe
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.pdb
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UserList.UI.ConsoleUI.csprojResolveAssemblyReference.cache
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.exe
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.pdb
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.dll
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.dll
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.dll
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.dll
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.pdb
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.pdb
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.pdb
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.pdb
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Fake.dll
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Fake.pdb
+E:\Epam courses\180414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.exe.config
+E:\Epam courses\180414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.exe
+E:\Epam courses\180414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.pdb
+E:\Epam courses\180414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.exe
+E:\Epam courses\180414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.pdb
+E:\Epam courses\180414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.dll
+E:\Epam courses\180414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.dll
+E:\Epam courses\180414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.dll
+E:\Epam courses\180414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.dll
+E:\Epam courses\180414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Fake.dll
+E:\Epam courses\180414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.pdb
+E:\Epam courses\180414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.pdb
+E:\Epam courses\180414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.pdb
+E:\Epam courses\180414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.pdb
+E:\Epam courses\180414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Fake.pdb
+E:\Epam courses\180414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UserList.UI.ConsoleUI.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\210414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.exe.config
+C:\Users\user\Desktop\210414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.exe
+C:\Users\user\Desktop\210414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.pdb
+C:\Users\user\Desktop\210414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.exe
+C:\Users\user\Desktop\210414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.pdb
+C:\Users\user\Desktop\210414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.dll
+C:\Users\user\Desktop\210414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.dll
+C:\Users\user\Desktop\210414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.dll
+C:\Users\user\Desktop\210414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.dll
+C:\Users\user\Desktop\210414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Fake.dll
+C:\Users\user\Desktop\210414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.pdb
+C:\Users\user\Desktop\210414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.pdb
+C:\Users\user\Desktop\210414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.pdb
+C:\Users\user\Desktop\210414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.pdb
+C:\Users\user\Desktop\210414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Fake.pdb
+C:\Users\user\Desktop\210414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UserList.UI.ConsoleUI.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.exe.config
+C:\Users\user\Desktop\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.exe
+C:\Users\user\Desktop\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.pdb
+C:\Users\user\Desktop\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.exe
+C:\Users\user\Desktop\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.pdb
+C:\Users\user\Desktop\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.dll
+C:\Users\user\Desktop\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.dll
+C:\Users\user\Desktop\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.dll
+C:\Users\user\Desktop\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.dll
+C:\Users\user\Desktop\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Fake.dll
+C:\Users\user\Desktop\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.pdb
+C:\Users\user\Desktop\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.pdb
+C:\Users\user\Desktop\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.pdb
+C:\Users\user\Desktop\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.pdb
+C:\Users\user\Desktop\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Fake.pdb
+C:\Users\user\Desktop\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UserList.UI.ConsoleUI.csprojResolveAssemblyReference.cache
+H:\Epam courses\New folder\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.exe.config
+H:\Epam courses\New folder\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.exe
+H:\Epam courses\New folder\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.pdb
+H:\Epam courses\New folder\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UserList.UI.ConsoleUI.csprojResolveAssemblyReference.cache
+H:\Epam courses\New folder\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.exe
+H:\Epam courses\New folder\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.pdb
+H:\Epam courses\New folder\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.dll
+H:\Epam courses\New folder\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.dll
+H:\Epam courses\New folder\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.dll
+H:\Epam courses\New folder\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.dll
+H:\Epam courses\New folder\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Fake.dll
+H:\Epam courses\New folder\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.pdb
+H:\Epam courses\New folder\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.pdb
+H:\Epam courses\New folder\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.pdb
+H:\Epam courses\New folder\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.pdb
+H:\Epam courses\New folder\230414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Fake.pdb
+H:\Epam courses\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.exe.config
+H:\Epam courses\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.exe
+H:\Epam courses\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.pdb
+H:\Epam courses\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.exe
+H:\Epam courses\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.pdb
+H:\Epam courses\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.dll
+H:\Epam courses\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.dll
+H:\Epam courses\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.dll
+H:\Epam courses\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.dll
+H:\Epam courses\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Fake.dll
+H:\Epam courses\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.pdb
+H:\Epam courses\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.pdb
+H:\Epam courses\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.pdb
+H:\Epam courses\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.pdb
+H:\Epam courses\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Fake.pdb
+H:\Epam courses\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UserList.UI.ConsoleUI.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.exe.config
+C:\Users\user\Desktop\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.exe
+C:\Users\user\Desktop\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.pdb
+C:\Users\user\Desktop\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.exe
+C:\Users\user\Desktop\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.pdb
+C:\Users\user\Desktop\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.dll
+C:\Users\user\Desktop\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.dll
+C:\Users\user\Desktop\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.dll
+C:\Users\user\Desktop\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.dll
+C:\Users\user\Desktop\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Fake.dll
+C:\Users\user\Desktop\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.pdb
+C:\Users\user\Desktop\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.pdb
+C:\Users\user\Desktop\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.pdb
+C:\Users\user\Desktop\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.pdb
+C:\Users\user\Desktop\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Fake.pdb
+C:\Users\user\Desktop\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UserList.UI.ConsoleUI.csprojResolveAssemblyReference.cache
+G:\Epam courses\New folder\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.exe.config
+G:\Epam courses\New folder\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.exe
+G:\Epam courses\New folder\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.pdb
+G:\Epam courses\New folder\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.exe
+G:\Epam courses\New folder\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UI.ConsoleUI.pdb
+G:\Epam courses\New folder\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.dll
+G:\Epam courses\New folder\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.dll
+G:\Epam courses\New folder\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.dll
+G:\Epam courses\New folder\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.dll
+G:\Epam courses\New folder\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Fake.dll
+G:\Epam courses\New folder\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.pdb
+G:\Epam courses\New folder\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.pdb
+G:\Epam courses\New folder\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.pdb
+G:\Epam courses\New folder\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.pdb
+G:\Epam courses\New folder\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Fake.pdb
+G:\Epam courses\New folder\250414\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UserList.UI.ConsoleUI.csprojResolveAssemblyReference.cache

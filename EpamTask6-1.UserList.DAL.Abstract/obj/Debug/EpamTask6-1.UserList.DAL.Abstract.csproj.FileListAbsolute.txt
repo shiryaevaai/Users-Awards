@@ -1,0 +1,14 @@
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Abstract\bin\Debug\EpamTask6-1.UserList.DAL.Abstract.dll
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Abstract\bin\Debug\EpamTask6-1.UserList.DAL.Abstract.pdb
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Abstract\bin\Debug\EpamTask6-1.UserList.Entities.dll
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Abstract\bin\Debug\EpamTask6-1.UserList.Entities.pdb
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Abstract\obj\Debug\EpamTask6-1.UserList.DAL.Abstract.csprojResolveAssemblyReference.cache
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Abstract\obj\Debug\EpamTask6-1.UserList.DAL.Abstract.dll
+C:\Users\Анна\documents\visual studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Abstract\obj\Debug\EpamTask6-1.UserList.DAL.Abstract.pdb
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Abstract\bin\Debug\EpamTask6-1.UserList.DAL.Abstract.dll
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Abstract\bin\Debug\EpamTask6-1.UserList.DAL.Abstract.pdb
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Abstract\bin\Debug\EpamTask6-1.UserList.Entities.dll
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Abstract\bin\Debug\EpamTask6-1.UserList.Entities.pdb
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Abstract\obj\Debug\EpamTask6-1.UserList.DAL.Abstract.csprojResolveAssemblyReference.cache
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Abstract\obj\Debug\EpamTask6-1.UserList.DAL.Abstract.dll
+C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Abstract\obj\Debug\EpamTask6-1.UserList.DAL.Abstract.pdb
