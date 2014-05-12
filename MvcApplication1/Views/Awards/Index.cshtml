@@ -1,4 +1,4 @@
-﻿@model IEnumerable<EpamTask6_1.UserList.Entities.User>
+﻿@model IEnumerable<EpamTask6_1.UserList.Entities.Award>
 
 @{
     ViewBag.Title = "Index";
@@ -12,13 +12,7 @@
 <table>
     <tr>
         <th>
-            Name
-        </th>
-        <th>
-            DateOfBirth
-        </th>
-        <th>
-            Age
+            Title
         </th>
         <th></th>
     </tr>
@@ -26,18 +20,11 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateOfBirth)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Age)
+            @Html.DisplayFor(modelItem => item.Title)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Awards", "UserAwards", new { id=item.ID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ID })
         </td>
     </tr>

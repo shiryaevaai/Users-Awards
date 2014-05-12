@@ -93,9 +93,9 @@
            // return View(model);
         }
 
-        public ActionResult UserAwards(Users model)
+        public ActionResult UserAwards(Guid id)
         {
-            // var model = Users.GetAllUsers();
+            var model = Users.GetUserAwards(id);
             return View(model);
         }
 

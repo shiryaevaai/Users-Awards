@@ -75,5 +75,11 @@
             _logic.DeleteUser(nu);
   
         }
+
+        public static IEnumerable<Award> GetUserAwards(Guid id)
+        {
+            User nu = _logic.GetUserByID(id);
+            return _logic.GetUserAwards(nu);
+        } 
     }
 }
