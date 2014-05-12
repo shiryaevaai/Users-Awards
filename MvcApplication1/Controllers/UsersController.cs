@@ -43,8 +43,9 @@
             return View(model);
         }
 
-        public ActionResult Edit()
+        public ActionResult Edit(Guid id)
         {
+            var model = Users.GetUser(id);
             return View();
         }
 
@@ -93,11 +94,17 @@
            // return View(model);
         }
 
-        public ActionResult UserAwards(Users model)
+        public ActionResult UserAwards(Guid id)
         {
-            // var model = Users.GetAllUsers();
+            var model = Users.GetUserAwards(id);
             return View(model);
         }
+
+        //public ActionResult Index()
+        //{
+        //    var model = Users.GetAllUsers();
+        //    return View(model);
+        //}
 
     }
 }

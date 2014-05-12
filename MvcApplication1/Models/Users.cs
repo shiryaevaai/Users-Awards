@@ -49,6 +49,7 @@
         //    this._awardList = nu.GetAwardList();
         //}
 
+        #region UserBM
         public static IEnumerable<User> GetAllUsers()
         {
             return _logic.GetAllUsers();
@@ -73,7 +74,14 @@
         {
             User nu = _logic.GetUserByID(model.ID);
             _logic.DeleteUser(nu);
-  
+
         }
+
+        public static IEnumerable<Award> GetUserAwards(Guid id)
+        {
+            User nu = _logic.GetUserByID(id);
+            return _logic.GetUserAwards(nu);
+        } 
+        #endregion
     }
 }
