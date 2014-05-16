@@ -15,13 +15,13 @@
 
     public class Users
     {
-        [Required]
+        [Required(ErrorMessage="Необходимо ввести имя пользователя!")]
         [Display(Name = "Имя")]
         public string Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Необходимо ввести дату рождения пользователя!")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "dd/mm/yyyy", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0}:dd-MM-yyyy", ApplyFormatInEditMode = true)]
         [Display(Name = "Дата рождения")]
         public DateTime DateOfBirth { get; set; }
 

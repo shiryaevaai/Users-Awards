@@ -1,0 +1,28 @@
+﻿@model IEnumerable<EpamTask6_1.UserList.Entities.Award>
+
+@if (Model.Count()==0)
+{
+    
+    @:У данного пользователя пока нет наград
+    
+}
+else
+{
+    <table>
+        <tr>
+            <th>
+                Title
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>      
+        </tr>
+    }
+
+    </table>
+}

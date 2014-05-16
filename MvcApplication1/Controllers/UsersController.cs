@@ -6,6 +6,8 @@
     using System.Web;
     using System.Web.Mvc;
 
+    using System.IO;
+
     //using EpamTask6_1.UserList.DAL.Abstract;
     //using EpamTask6_1.UserList.DAL.Fake;
     //using EpamTask6_1.UserList.DAL.Files;
@@ -32,6 +34,7 @@
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Users model)
         {
             if (ModelState.IsValid)
@@ -49,6 +52,7 @@
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(Users model)
         {
             //if (ModelState.IsValid)
@@ -75,6 +79,7 @@
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Delete(Users model)
         {
             //if (ModelState.IsValid)
@@ -95,8 +100,30 @@
 
         public ActionResult UserAwards(Guid id)
         {
-            var model = Users.GetUserAwards(id);
+            var model = Users.GetUser(id);            
+           // var user = Users.GetUser(id);
             return View(model);
+        }
+
+        [ChildActionOnly]
+        public ActionResult GetUserAwards(Guid id)
+        {
+            var model = Users.GetUserAwards(id);
+            return PartialView(model);
+        }
+
+        public ActionResult UploadAvatar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult UploadAvatar(HttpPostedFileBase image)
+        {
+            //image.SaveAs(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"av1"));
+            FileWorker.SaveFile(image);
+            return View();
         }
 
     }
