@@ -34,7 +34,7 @@
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+       // [ValidateAntiForgeryToken]
         public ActionResult Create(Users model)
         {
             if (ModelState.IsValid)
@@ -52,7 +52,7 @@
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+       // [ValidateAntiForgeryToken]
         public ActionResult Edit(Users model)
         {
             //if (ModelState.IsValid)
@@ -79,7 +79,7 @@
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+      //  [ValidateAntiForgeryToken]
         public ActionResult Delete(Users model)
         {
             //if (ModelState.IsValid)
@@ -118,7 +118,7 @@
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+      //  [ValidateAntiForgeryToken]
         public ActionResult UploadAvatar(HttpPostedFileBase image)
         {
             //image.SaveAs(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"av1"));

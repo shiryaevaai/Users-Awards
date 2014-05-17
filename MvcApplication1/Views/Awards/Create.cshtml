@@ -1,4 +1,4 @@
-﻿@model EpamTask6_1.UserList.Entities.Award
+﻿@model MvcApplication1.Models.Awards
 
 @{
     ViewBag.Title = "Create";
@@ -12,7 +12,7 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Award</legend>
+        <legend>Awards</legend>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Title)

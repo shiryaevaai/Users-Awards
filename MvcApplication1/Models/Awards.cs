@@ -18,16 +18,35 @@
 
         public Guid ID { get; set; }
 
-        public static UserListLogic _logic = new UserListLogic();
+        public Awards() { }
 
-        public static IEnumerable<Award> GetAllAwards()
+        public Awards(string title)
         {
-            return _logic.GetAllAwards();
+            this.Title = title;
         }
 
-        public static Award GetUAward(Guid id)
+        public Awards(Guid id, string title)
         {
-            return _logic.GetAwardByID(id);
+            this.ID = id;
+            this.Title = title;
+        }
+
+        public static UserListLogic _logic = new UserListLogic();
+
+        public static IEnumerable<Awards> GetAllAwards()
+        {  
+            var list = _logic.GetAllAwards();
+            foreach (var item in list)
+            {
+                Awards award = new Awards(item.ID, item.Title);
+                yield return award;
+            }
+        }
+
+        public static Awards GetUAward(Guid id)
+        {
+            var item = _logic.GetAwardByID(id);
+            return new Awards(item.ID, item.Title);
         }
 
         public static void CreateAward(Awards model)

@@ -9,6 +9,7 @@
 
     using EpamTask6_1.UserList.DAL.Abstract;
     using EpamTask6_1.UserList.Entities;
+    using System.Configuration;
 
     public class AwardListDao : IAwardListDao
     {
@@ -23,7 +24,7 @@
 
         public AwardListDao()
         {
-
+            // var val1 = ConfigurationManager.AppSettings["xyz"];
             this._awardsFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AWARDS_FILE);
             this._awards_and_usersFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AWARDS_AND_USERS_FILE);
         }

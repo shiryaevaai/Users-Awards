@@ -274,10 +274,10 @@
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Delete.cshtml" />
     <Content Include="Views\Awards\Index.cshtml" />
-    <Content Include="Views\Awards\Create.cshtml" />
     <Content Include="Views\Awards\Edit.cshtml" />
     <Content Include="Views\Users\UserAwards.cshtml" />
     <Content Include="Views\Users\GetUserAwards.cshtml" />
+    <Content Include="Views\Awards\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
