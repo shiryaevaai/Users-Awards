@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-namespace MvcApplication1.Controllers
+﻿namespace MvcApplication1.Controllers
 {
     using System;
     using System.Collections.Generic;

@@ -1,0 +1,45 @@
+﻿@model MvcInterface.Models.Users
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<p>
+    @Html.ActionLink("Add new Award", "AddAward")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Date of Birth
+        </th>
+        <th>
+            Age
+        </th>
+        <th></th>
+    </tr>
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Age)
+        </td>
+        <td>
+
+             @Html.ActionLink("Awards", "UserAwards", new { id = Model.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = Model.ID })
+        </td>
+    </tr>
+
+
+</table>

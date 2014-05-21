@@ -1,0 +1,9 @@
+﻿@model MvcInterface.Models.Users
+
+@{
+    ViewBag.Title = "UserAwards";
+}
+
+<h2>UserAwards</h2>
+
+@Html.Action("GetUserAwards", Model.ID)

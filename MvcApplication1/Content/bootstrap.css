@@ -13,6 +13,10 @@ html {
 body {
   margin: 0;
 }
+
+.body-content {
+    padding:40px 40px 40px 40px;
+}
 article,
 aside,
 details,
@@ -177,12 +181,14 @@ optgroup {
   font-weight: bold;
 }
 table {
-  border-spacing: 5px;
-  border-collapse: collapse;
+
+  border-spacing: 5px, 5px;
+  /*border-collapse: collapse;*/
 }
 td,
 th {
   padding: 0;
+  margin:10px 5px 10px 20px
 }
 @media print {
   * {
