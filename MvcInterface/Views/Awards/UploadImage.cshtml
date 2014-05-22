@@ -1,0 +1,14 @@
+﻿@model System.Guid
+
+@{
+    ViewBag.Title = "UploadImage";
+    
+}
+
+<h2>UploadImage</h2>
+
+@using (Html.BeginForm("UploadImage", "Awards", FormMethod.Post, new { enctype = "multipart/form-data", id = Model}))
+{
+    <input type="file" name="image" />    
+    <input type="submit" value="Load file"/>
+}

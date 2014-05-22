@@ -2,13 +2,13 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Web;
     using System.Web.Mvc;
 
-    using EpamTask6_1.UserList.Entities;
-    using EpamTask6_1.UserList.Logic;
     using MvcInterface.Models;
+    using System.Web.UI;
 
     public class AwardsController : Controller
     {
@@ -51,30 +51,64 @@
             return View(model);
         }
 
-        //
-        // GET: /Awards/Edit/5
 
-        public ActionResult Edit(int id)
+        [OutputCache(Location = OutputCacheLocation.None, NoStore = true)]
+        public JsonResult CheckAwardTitle(string Title)
         {
-            return View();
+            var result = Awards.CheckAwardTitle(Title);
+
+            if (result)
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json("Award with this Title already exists.", JsonRequestBehavior.AllowGet);
+            }
         }
 
-        //
-        // POST: /Awards/Edit/5
+        public ActionResult GetAwardImage(string path)
+        {
+            return File(FileWorker.GetFile(path), "image/jpeg", path);
+        }
+
+        public ActionResult UploadImage(Guid id)
+        {
+            Guid AwardID = id;
+            return View(AwardID);
+        }
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        //  [ValidateAntiForgeryToken]
+        public ActionResult UploadImage(Guid id, HttpPostedFileBase image)
         {
+            Guid AwardID = id;
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                Awards award = Awards.GetAward(id);
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", award.ID.ToString());
+                FileWorker.SaveFile(image, path);
+                award.SetImage();
             }
             catch
             {
-                return View();
+               
+                //return RedirectToAction("Details", new { id = AwardID });
+                return RedirectToAction("Index");
             }
+
+            //return RedirectToAction("Details", new { id = AwardID });
+            return RedirectToAction("Index");
+        }
+
+        //  [ValidateAntiForgeryToken]
+        public ActionResult RemoveImage(Guid id)
+        {
+            Awards award = Awards.GetAward(id);
+            award.RemoveImage();
+            Guid AwardID = id;
+            return RedirectToAction("Index");
+            //return RedirectToAction("Details", new { id = AwardID });
         }
       
 

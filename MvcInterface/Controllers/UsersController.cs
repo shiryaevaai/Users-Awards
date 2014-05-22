@@ -91,11 +91,10 @@
         public ActionResult UserAwards(Guid id)
         {
             var model = Users.GetUser(id);
-            // var user = Users.GetUser(id);
             return View(model);
         }
 
-        [ChildActionOnly]
+        //[ChildActionOnly]
         public ActionResult GetUserAwards(Guid id)
         {
             var model = Users.GetUserAwards(id);

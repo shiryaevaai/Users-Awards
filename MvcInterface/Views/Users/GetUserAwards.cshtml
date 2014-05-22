@@ -10,14 +10,27 @@ else
 {
     <table class="table">
         <tr>
+            <th></th>
             <th>
                 Title
-            </th>
-            <th></th>
-        </tr>
+            </th>        </tr>
 
     @foreach (var item in Model) {
         <tr>
+             <td>
+            <div class="row-fluid show-grid">
+
+                <div class="span1" >
+                     <img src="@Url.Action("GetAwardImage", "Awards", new { path = item.ImageAddr })" class="img-thumbnail" />
+                </div>
+                <div class="span1" ></div>
+                <div class="span2" ></div>
+                <div class="span4" ></div>
+                <div class="span4" ></div>
+
+            </div>
+         </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>      
