@@ -122,22 +122,44 @@
 
         public ActionResult UploadImage(Guid id)
         {
-            return View();
+            Guid UserID = id;
+            return View(UserID);
         }
 
         [HttpPost]
         //  [ValidateAntiForgeryToken]
         public ActionResult UploadImage(Guid id, HttpPostedFileBase image)
         {
-            //image.SaveAs(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"av1"));
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, id.ToString());
-            FileWorker.SaveFile(image, path);
-            return RedirectToAction("Index");
+            Guid UserID = id;
+            try
+            {
+                Users user = Users.GetUser(id);
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", user.ID.ToString());
+                FileWorker.SaveFile(image, path);
+                user.SetImage();
+            }
+            catch
+            {
+                // Users.DefaultImage = path;
+                return RedirectToAction("Details", new { id = UserID });
+            }
+
+            return RedirectToAction("Details", new { id = UserID });
         }
 
         public ActionResult GetImage(Users user)
         {
             return File(FileWorker.GetFile(user.ImageAddr), "image/jpeg", user.ImageAddr);
+        }
+
+        //  [ValidateAntiForgeryToken]
+        public ActionResult RemoveImage(Guid id)
+        {
+             Users user = Users.GetUser(id);
+             user.RemoveImage();
+             Guid UserID = id;
+
+             return RedirectToAction("Details", new { id = UserID });
         }
 
     }

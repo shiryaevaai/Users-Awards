@@ -7,55 +7,11 @@
 
 <h2>Details</h2>
 
-<p>
-    @Html.ActionLink("Add new Award", "AddAwardToUser")
-</p>
-
-
-@*<div class="row">
-  <div class="span4">
-
-       <div class="span2">
-      </div>
-
-      <div class="span2">
-        Name
-      </div>
-
-      <div class="span2">
-          Date of Birth
-      </div>
-
-      <div class="span2">
-          Age
-      </div>
-  </div>
-
-     <div class="span4">
-
-       <div class="span2 thumbnail" >    
-             <img src="@Url.Action("GetUserImage", new { path = Model.ImageAddr })" class="thumbnail" />
-        </div>
-
-      <div class="span2">
-       @Html.DisplayFor(model => model.Name)
-      </div>
-
-      <div class="span2">
-          @Html.DisplayFor(model => model.DateOfBirth)
-      </div>
-
-      <div class="span2">
-        @Html.DisplayFor(model => model.Age)
-      </div>
-  </div>
-</div>*@
+ <img src="@Url.Action("GetUserImage", new { path = Model.ImageAddr })" class="img-polaroid" />
 
 <table class="table">
     <tr>
-        <th>
-          
-        </th>
+
         <th>
             Name
         </th>
@@ -69,10 +25,6 @@
     </tr>
 
     <tr>
-        <td>   
-            <img src="@Url.Action("GetUserImage", new { path = Model.ImageAddr })" class="img-polaroid" />
-
-        </td>
         <td>
             @Html.DisplayFor(model => model.Name)
         </td>
@@ -84,8 +36,13 @@
         </td>
         <td>
 
-            @Html.ActionLink("Awards", "UserAwards", new { id = Model.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = Model.ID })
+            @Html.ActionLink("Awards", "UserAwards", new { id = Model.ID }) | 
+            @Html.ActionLink("Add new Award", "AddAwardToUser")|
+            @Html.ActionLink("Change image", "UploadImage", new { id = Model.ID }) |
+            @Html.ActionLink("Remove image", "RemoveImage", new { id = Model.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = Model.ID })      
+            
+
            
         </td>
     </tr>

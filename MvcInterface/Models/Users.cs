@@ -31,68 +31,17 @@
         public DateTime DateOfBirth { get; set; }
 
         public int Age { get; set; }
-        //{
-        //    get
-        //    {
-        //        int days, months, years;
-        //        if (DateTime.Now < this.DateOfBirth)
-        //        {
-        //            throw new ArgumentException("Неверный ввод даты рождения");//
-        //        }
-        //        else
-        //        {
-        //            years = DateTime.Now.Year - this.DateOfBirth.Year;
-        //            months = DateTime.Now.Month - this.DateOfBirth.Month;
-        //            if (months < 0)
-        //            {
-        //                months += 12;
-        //                years--;
-        //            }
 
-        //            days = DateTime.Now.Day - this.DateOfBirth.Day;
-        //            if (days < 0)
-        //            {
-        //                days += DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
-        //                months--;
-        //                if (months < 0)
-        //                {
-        //                    months += 12;
-        //                    years--;
-        //                }
-
-        //                if (months >= 12)
-        //                {
-        //                    months -= 12;
-        //                    years++;
-        //                }
-        //            }
-
-        //            if ((days < 0) || (months < 0) || (years < 0))
-        //            {
-        //                throw new ArgumentException("Неверный ввод даты!");//
-        //            }
-
-        //            if (years > 150)
-        //            {
-        //                throw new ArgumentException("Слишком большой возраст");//
-        //            }
-        //        }
-
-        //        return years;
-        //    }
-        //}
-
+        public string ImageAddr { get; set; }
+       
         public List<Guid> _awardList = new List<Guid>();
 
         public static List<Awards> _awardNotHasList = new List<Awards>();
 
-        public string DefaultImage = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "default.jpg");
-        //public string DefaultImage ="C:\\Users\\User\\Documents\\Visual Studio 2012\\Projects\\EpamTask6-1\\MvcInterface\\default.jpg";
+        public static Dictionary<Guid, string> _usersImageList = new Dictionary<Guid, string>();
 
-       // C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface
-
-        public string ImageAddr { get; set; }
-
+        public static string DefaultImage = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", "default.jpg");
+        
         public Users() { }
 
         public Users(string name, DateTime dateOfBirth)
@@ -136,6 +85,10 @@
         {
             var item = BusinessLogicHelper._logic.GetUserByID(id);
             Users user = new Users(item.ID, item.Name, item.DateOfBirth, item.Age, item.GetAwardList());
+            if (Users._usersImageList.ContainsKey(user.ID))
+            {
+                user.SetImage();
+            }
             return user;
         }
 
@@ -198,9 +151,29 @@
             return true;
         }
 
-        public void SetImage(string imageAddress)
+        public void SetImage()
         {
-            this.ImageAddr = imageAddress;
+            if (!Users._usersImageList.ContainsKey(this.ID))
+            {
+                Users._usersImageList.Add(this.ID, Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", this.ID.ToString()));
+                this.ImageAddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", this.ID.ToString());
+            }
+            else
+            {
+                Users._usersImageList[this.ID] = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", this.ID.ToString());
+                this.ImageAddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", this.ID.ToString());
+            }
+        }
+
+        public void RemoveImage()
+        {
+            if (Users._usersImageList.ContainsKey(this.ID))
+            {
+                Users._usersImageList.Remove(this.ID);
+            }
+            
+            this.ImageAddr = Users.DefaultImage;
+
         }
         
     }
