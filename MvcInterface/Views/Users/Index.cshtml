@@ -11,34 +11,37 @@
 </p>
 <table class="table">
     <tr>
+        <th></th>
+
         <th>
             Name
         </th>
-@*        <th>
-            Date of Birth
-        </th>
-        <th>
-            Age
-        </th>*@
+
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+         <td>
+            <div class="row-fluid show-grid">
+
+                <div class="span1" >
+                     <img src="@Url.Action("GetUserImage", new { path = item.ImageAddr })" class="img-thumbnail" />
+                </div>
+                <div class="span1" ></div>
+                <div class="span2" ></div>
+                <div class="span4" ></div>
+                <div class="span4" ></div>
+
+            </div>
+         </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
-@*        <td>
-            @Html.DisplayFor(modelItem => item.DateOfBirth)
-        </td>
+
         <td>
-            @Html.DisplayFor(modelItem => item.Age)
-        </td>*@
-        <td>
- @*           @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |*@
            @Html.ActionLink("Details", "Details", new { id=item.ID }) 
-        @*     @Html.ActionLink("Awards", "UserAwards", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
         </td>
     </tr>
 }

@@ -29,11 +29,6 @@
             return View(model);
         }
 
-        public ActionResult GetUserImage(string path)
-        {
-            return File(FileWorker.GetFile(path), "image/jpeg", path);
-        }
-
         public ActionResult Create()
         {
             return View();
@@ -65,11 +60,6 @@
             {
                 return Json("User with this name already exists.", JsonRequestBehavior.AllowGet);
             }
-        }
-
-        public ActionResult Edit()
-        {
-            return View();
         }
 
         public ActionResult Delete(Guid id)
@@ -112,13 +102,31 @@
             return PartialView(model);
         }
 
-        //public ActionResult AddAwardToUser(Guid id)
-        //{
-        //    var model = Users.GetUser(id);
-        //    // var user = Users.GetUser(id);
-        //    return View(model);
-        //}
+        public ActionResult AddAwardToUser(Guid id)
+        {
+            var model = Users.GetUser(id);
+           // Guid UserID = id;
+            return View(model);
+        }
 
+        [HttpPost]
+        public ActionResult AddAwardToUser(Guid UserID, Guid AwardID)
+        {
+            var model = Users.GetUser(UserID);
+            if (Users.AddAwardToUser(UserID, AwardID))
+            {
+                return RedirectToAction("UserAwards", new { id = UserID });
+            }
+            else
+            {
+                return View(model);
+            }
+        }
+
+        public ActionResult GetUserImage(string path)
+        {
+            return File(FileWorker.GetFile(path), "image/jpeg", path);
+        }
 
         public ActionResult UploadImage(Guid id)
         {
@@ -147,10 +155,10 @@
             return RedirectToAction("Details", new { id = UserID });
         }
 
-        public ActionResult GetImage(Users user)
-        {
-            return File(FileWorker.GetFile(user.ImageAddr), "image/jpeg", user.ImageAddr);
-        }
+        //public ActionResult GetImage(Users user)
+        //{
+        //    return File(FileWorker.GetFile(user.ImageAddr), "image/jpeg", user.ImageAddr);
+        //}
 
         //  [ValidateAntiForgeryToken]
         public ActionResult RemoveImage(Guid id)

@@ -15,6 +15,9 @@
 
     public class Users
     {
+        public static Dictionary<Guid, string> _usersImageList = new Dictionary<Guid, string>();
+
+        public static string DefaultImage = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", "default.jpg");
 
         [HiddenInput(DisplayValue = false)]
         public Guid ID { get; set; }
@@ -36,11 +39,7 @@
        
         public List<Guid> _awardList = new List<Guid>();
 
-        public static List<Awards> _awardNotHasList = new List<Awards>();
-
-        public static Dictionary<Guid, string> _usersImageList = new Dictionary<Guid, string>();
-
-        public static string DefaultImage = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", "default.jpg");
+        public List<Awards> _awardNotHasList = new List<Awards>();
         
         public Users() { }
 
@@ -77,6 +76,10 @@
             foreach (var item in list)
             {
                 Users user = new Users(item.ID, item.Name, item.DateOfBirth, item.Age, item.GetAwardList());
+                if (Users._usersImageList.ContainsKey(user.ID))
+                {
+                    user.SetImage();
+                }
                 yield return user;
             }
         }
@@ -89,6 +92,7 @@
             {
                 user.SetImage();
             }
+            user.GetUserNotHasAwards(user.ID);
             return user;
         }
 
@@ -108,6 +112,12 @@
             BusinessLogicHelper._logic.DeleteUser(nu);
         }
 
+        public static bool AddAwardToUser(Guid UserID, Guid AwardID)
+        {
+            User nu = BusinessLogicHelper._logic.GetUserByID(UserID);
+            return BusinessLogicHelper._logic.AddAwardToUser(UserID, AwardID);
+        }
+
         public static IEnumerable<Awards> GetUserAwards(Guid id)
         {
             User nu = BusinessLogicHelper._logic.GetUserByID(id);
@@ -120,9 +130,9 @@
             }
         }
 
-        public static IEnumerable<Awards> GetUserNotHasAwards(Guid id)
+        public void GetUserNotHasAwards(Guid id)
         {
-
+            this._awardNotHasList.Clear();
             User nu = BusinessLogicHelper._logic.GetUserByID(id);
             var list = BusinessLogicHelper._logic.GetUserAwards(nu);
             var all = BusinessLogicHelper._logic.GetAllAwards();
@@ -131,11 +141,11 @@
                 if (!list.Contains(item))
                 {
                     Awards aw = new Awards(item.ID, item.Title);
-                    _awardNotHasList.Add(aw);
+                    this._awardNotHasList.Add(aw);
                 }
             }
 
-            return _awardNotHasList;
+            //return _awardNotHasList;
         }
 
         public static bool CheckUserName(string username)

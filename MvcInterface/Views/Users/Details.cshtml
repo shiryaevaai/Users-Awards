@@ -7,7 +7,17 @@
 
 <h2>Details</h2>
 
- <img src="@Url.Action("GetUserImage", new { path = Model.ImageAddr })" class="img-polaroid" />
+<div class="row-fluid show-grid">
+
+    <div class="span1" >
+         <img src="@Url.Action("GetUserImage", new { path = Model.ImageAddr })" />
+    </div>
+    <div class="span1" ></div>
+    <div class="span2" ></div>
+    <div class="span4" ></div>
+    <div class="span4" ></div>
+
+</div>
 
 <table class="table">
     <tr>
@@ -37,7 +47,7 @@
         <td>
 
             @Html.ActionLink("Awards", "UserAwards", new { id = Model.ID }) | 
-            @Html.ActionLink("Add new Award", "AddAwardToUser")|
+            @Html.ActionLink("Add new Award", "AddAwardToUser", new { id = Model.ID })|
             @Html.ActionLink("Change image", "UploadImage", new { id = Model.ID }) |
             @Html.ActionLink("Remove image", "RemoveImage", new { id = Model.ID }) |
             @Html.ActionLink("Delete", "Delete", new { id = Model.ID })      

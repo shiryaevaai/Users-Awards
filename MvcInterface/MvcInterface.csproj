@@ -324,6 +324,7 @@
     <Content Include="Views\Users\UploadImage.cshtml" />
     <Content Include="Views\Files\Index.cshtml" />
     <Content Include="Views\Files\UploadImage.cshtml" />
+    <Content Include="Views\Users\AddAwardToUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

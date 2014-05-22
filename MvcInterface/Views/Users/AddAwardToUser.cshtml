@@ -1,0 +1,38 @@
+﻿@model MvcInterface.Models.Users
+
+@{
+    ViewBag.Title = "AddAwardToUser";
+    var list = Model._awardNotHasList;
+}
+
+<h2>AddAwardToUser</h2>
+
+
+@foreach (var item in list) {
+
+    @*    @Html.DisplayFor(modelItem => item.Title) |
+        @Html.ActionLink("Add", "AddAwardToUser", new { AwardID=item.ID }) *@
+
+        
+        using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <fieldset>       
+                <legend></legend>
+
+                <div class="editor-field">
+                 @Html.DisplayFor(modelItem => item.Title)
+                </div>
+
+                @Html.Hidden("UserID", Model.ID)
+                @Html.Hidden("AwardID", item.ID)
+
+                <p>
+                    <input type="submit" value="Add" />
+                </p>
+            </fieldset>
+        }
+          
+}
+
+
