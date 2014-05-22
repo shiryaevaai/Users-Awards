@@ -1,0 +1,18 @@
+﻿@model MvcInterface.Models.FileDescription
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@if (Model == null)
+{
+    <div>File not loaded</div>
+    @Html.ActionLink("UploadImage","UploadImage");
+}
+else
+{
+    <div>File @Model.Name loaded</div>
+    <img src="@Url.Action("GetImage")" />
+}

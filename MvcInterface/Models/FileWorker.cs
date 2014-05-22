@@ -8,19 +8,29 @@
 
     public class FileWorker
     {
-        //private static string fileName;
+        public static string FileName { get; private set; }
+
+        public static void SaveFile(HttpPostedFileBase file, string path)
+        {
+            file.SaveAs(path);
+            FileName = file.FileName;
+        }
 
         public static void SaveFile(HttpPostedFileBase file)
         {
-            file.SaveAs(@"D:\myFile");
+            file.SaveAs("D:\\myfile");
             FileName = file.FileName;
+        }
+
+        public static byte[] GetFile(string path)
+        {
+            return File.ReadAllBytes(path);
         }
 
         public static byte[] GetFile()
         {
-            return File.ReadAllBytes(@"D:\myFile");
+            return File.ReadAllBytes(FileName);
         }
-
-        public static string FileName { get; private set; }
+                
     }
 }

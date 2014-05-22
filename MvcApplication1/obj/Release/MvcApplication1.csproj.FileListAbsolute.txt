@@ -17,7 +17,6 @@ C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\bin\System.Web.WebPages.Deployment.xml
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\bin\System.Web.WebPages.Razor.xml
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\bin\ru\EntityFramework.resources.dll
-C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\bin\ru\System.Web.Providers.resources.dll
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\obj\Release\MvcApplication1.csprojResolveAssemblyReference.cache
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\obj\Release\MvcApplication1.dll
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\obj\Release\MvcApplication1.pdb
@@ -108,3 +107,15 @@ C:\Users\user\Desktop\210514\EpamTask6-1\MvcApplication1\bin\ru\System.Web.Mvc.r
 C:\Users\user\Desktop\210514\EpamTask6-1\MvcApplication1\bin\ru\System.Web.WebPages.resources.dll
 C:\Users\user\Desktop\210514\EpamTask6-1\MvcApplication1\bin\ru\System.Web.WebPages.Deployment.resources.dll
 C:\Users\user\Desktop\210514\EpamTask6-1\MvcApplication1\bin\ru\System.Web.WebPages.Razor.resources.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\bin\EntityFramework.SqlServer.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\bin\Newtonsoft.Json.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\bin\EntityFramework.SqlServer.xml
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\bin\Newtonsoft.Json.xml
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\bin\System.Web.Providers.xml
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\bin\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\bin\ru\System.Web.Helpers.resources.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\bin\ru\System.Web.Mvc.resources.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\bin\ru\System.Web.Razor.resources.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\bin\ru\System.Web.WebPages.resources.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\bin\ru\System.Web.WebPages.Deployment.resources.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\bin\ru\System.Web.WebPages.Razor.resources.dll

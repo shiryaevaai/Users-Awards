@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.IO;
     using System.Linq;
     using System.Web;
     using System.Web.Mvc;
@@ -83,14 +84,22 @@
 
         public List<Guid> _awardList = new List<Guid>();
 
-       // public List<Awards> _awardNotHasList = new List<Guid>();
+        public static List<Awards> _awardNotHasList = new List<Awards>();
+
+        public string DefaultImage = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "default.jpg");
+        //public string DefaultImage ="C:\\Users\\User\\Documents\\Visual Studio 2012\\Projects\\EpamTask6-1\\MvcInterface\\default.jpg";
+
+       // C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface
+
+        public string ImageAddr { get; set; }
 
         public Users() { }
 
         public Users(string name, DateTime dateOfBirth)
         {
             this.Name = name;
-            this.DateOfBirth = dateOfBirth;            
+            this.DateOfBirth = dateOfBirth;
+            this.ImageAddr = DefaultImage;
         }
 
         public Users(Guid id, string name, DateTime dateOfBirth, int age)
@@ -99,6 +108,7 @@
             this.Name = name;
             this.DateOfBirth = dateOfBirth;
             this.Age = age;
+            this.ImageAddr = DefaultImage;
         }
 
         public Users(Guid id, string name, DateTime dateOfBirth, int age, IEnumerable<Guid> inputList) :
@@ -109,6 +119,7 @@
             this.DateOfBirth = dateOfBirth;
             this._awardList = inputList.ToList();
             this.Age = age;
+            this.ImageAddr = DefaultImage;
         }
 
         public static IEnumerable<Users> GetAllUsers()
@@ -156,20 +167,23 @@
             }
         }
 
-        //public static IEnumerable<Awards> GetUserNotHasAwards(Guid id)
-        //{
-        //    User nu = BusinessLogicHelper._logic.GetUserByID(id);
-        //    var list = BusinessLogicHelper._logic.GetUserAwards(nu);
-        //    var all = BusinessLogicHelper._logic.GetAllAwards();
-        //    foreach (var item in all)
-        //    {
-        //        if (!list.Contains(item))
-        //        {
-        //            Awards aw = new Awards(item.ID, item.Title);
-        //            _awardNotHasList.Add(aw);
-        //        }
-        //    }
-        //}
+        public static IEnumerable<Awards> GetUserNotHasAwards(Guid id)
+        {
+
+            User nu = BusinessLogicHelper._logic.GetUserByID(id);
+            var list = BusinessLogicHelper._logic.GetUserAwards(nu);
+            var all = BusinessLogicHelper._logic.GetAllAwards();
+            foreach (var item in all)
+            {
+                if (!list.Contains(item))
+                {
+                    Awards aw = new Awards(item.ID, item.Title);
+                    _awardNotHasList.Add(aw);
+                }
+            }
+
+            return _awardNotHasList;
+        }
 
         public static bool CheckUserName(string username)
         {
@@ -183,5 +197,11 @@
             }
             return true;
         }
+
+        public void SetImage(string imageAddress)
+        {
+            this.ImageAddr = imageAddress;
+        }
+        
     }
 }

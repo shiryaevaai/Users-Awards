@@ -29,6 +29,11 @@
             return View(model);
         }
 
+        public ActionResult GetUserImage(string path)
+        {
+            return File(FileWorker.GetFile(path), "image/jpeg", path);
+        }
+
         public ActionResult Create()
         {
             return View();
@@ -66,27 +71,6 @@
         {
             return View();
         }
-
-        [HttpPost]
-        // [ValidateAntiForgeryToken]
-        public ActionResult Edit(Users model)
-        {
-            //if (ModelState.IsValid)
-            //{
-            try
-            {
-                Users.UpdateUser(model);
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View(model);
-            }
-            //}
-
-            //return View(model);
-        }
-
 
         public ActionResult Delete(Guid id)
         {
@@ -136,18 +120,24 @@
         //}
 
 
-        public ActionResult UploadAvatar()
+        public ActionResult UploadImage(Guid id)
         {
             return View();
         }
 
         [HttpPost]
         //  [ValidateAntiForgeryToken]
-        public ActionResult UploadAvatar(HttpPostedFileBase image)
+        public ActionResult UploadImage(Guid id, HttpPostedFileBase image)
         {
             //image.SaveAs(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"av1"));
-            FileWorker.SaveFile(image);
-            return View();
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, id.ToString());
+            FileWorker.SaveFile(image, path);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult GetImage(Users user)
+        {
+            return File(FileWorker.GetFile(user.ImageAddr), "image/jpeg", user.ImageAddr);
         }
 
     }
