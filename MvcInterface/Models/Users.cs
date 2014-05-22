@@ -20,7 +20,7 @@
 
         [Required(ErrorMessage = "Необходимо ввести имя пользователя!")]
         [Display(Name = "Имя")]
-        [Remote("CheckUserName", "Users", ErrorMessage = "User with this name already exists.")]
+        [Remote("CheckUserName", "Users")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Необходимо ввести дату рождения пользователя!")]
@@ -83,6 +83,7 @@
 
         public List<Guid> _awardList = new List<Guid>();
 
+       // public List<Awards> _awardNotHasList = new List<Guid>();
 
         public Users() { }
 
@@ -151,8 +152,24 @@
             {
                 Awards aw = new Awards(item.ID, item.Title);
                 yield return aw;
+               
             }
         }
+
+        //public static IEnumerable<Awards> GetUserNotHasAwards(Guid id)
+        //{
+        //    User nu = BusinessLogicHelper._logic.GetUserByID(id);
+        //    var list = BusinessLogicHelper._logic.GetUserAwards(nu);
+        //    var all = BusinessLogicHelper._logic.GetAllAwards();
+        //    foreach (var item in all)
+        //    {
+        //        if (!list.Contains(item))
+        //        {
+        //            Awards aw = new Awards(item.ID, item.Title);
+        //            _awardNotHasList.Add(aw);
+        //        }
+        //    }
+        //}
 
         public static bool CheckUserName(string username)
         {

@@ -70,3 +70,12 @@ C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.User
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Fake\obj\Release\EpamTask6-1.UserList.DAL.Fake.csprojResolveAssemblyReference.cache
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Fake\obj\Release\EpamTask6-1.UserList.DAL.Fake.dll
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.Fake\obj\Release\EpamTask6-1.UserList.DAL.Fake.pdb
+C:\Users\user\Desktop\210514\EpamTask6-1\EpamTask6-1.UserList.DAL.Fake\bin\Release\EpamTask6-1.UserList.DAL.Fake.dll
+C:\Users\user\Desktop\210514\EpamTask6-1\EpamTask6-1.UserList.DAL.Fake\bin\Release\EpamTask6-1.UserList.DAL.Fake.pdb
+C:\Users\user\Desktop\210514\EpamTask6-1\EpamTask6-1.UserList.DAL.Fake\bin\Release\EpamTask6-1.UserList.DAL.Abstract.dll
+C:\Users\user\Desktop\210514\EpamTask6-1\EpamTask6-1.UserList.DAL.Fake\bin\Release\EpamTask6-1.UserList.Entities.dll
+C:\Users\user\Desktop\210514\EpamTask6-1\EpamTask6-1.UserList.DAL.Fake\bin\Release\EpamTask6-1.UserList.DAL.Abstract.pdb
+C:\Users\user\Desktop\210514\EpamTask6-1\EpamTask6-1.UserList.DAL.Fake\bin\Release\EpamTask6-1.UserList.Entities.pdb
+C:\Users\user\Desktop\210514\EpamTask6-1\EpamTask6-1.UserList.DAL.Fake\obj\Release\EpamTask6-1.UserList.DAL.Fake.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\210514\EpamTask6-1\EpamTask6-1.UserList.DAL.Fake\obj\Release\EpamTask6-1.UserList.DAL.Fake.dll
+C:\Users\user\Desktop\210514\EpamTask6-1\EpamTask6-1.UserList.DAL.Fake\obj\Release\EpamTask6-1.UserList.DAL.Fake.pdb

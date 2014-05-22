@@ -8,6 +8,7 @@
     using System.Web.Mvc;
 
     using MvcInterface.Models;
+    using System.Web.UI;
 
 
     public class UsersController : Controller
@@ -46,11 +47,19 @@
             return View(model);
         }
 
-        public JsonResult CheckUserName(string username)
+        [OutputCache(Location = OutputCacheLocation.None, NoStore = true)]
+        public JsonResult CheckUserName(string Name)
         {
-            var result = Users.CheckUserName(username);
+            var result = Users.CheckUserName(Name);
 
-            return Json(result, JsonRequestBehavior.AllowGet);
+            if (result)
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json("User with this name already exists.", JsonRequestBehavior.AllowGet);
+            }
         }
 
         public ActionResult Edit()
@@ -91,15 +100,15 @@
         {
             //if (ModelState.IsValid)
             //{
-                try
-                {
-                    Users.DeleteUser(model.ID);
-                    return RedirectToAction("Index");
-                }
-                catch
-                {
-                    return View(model);
-                }                
+            try
+            {
+                Users.DeleteUser(model.ID);
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View(model);
+            }
             //}
 
             // return View(model);
@@ -118,6 +127,14 @@
             var model = Users.GetUserAwards(id);
             return PartialView(model);
         }
+
+        //public ActionResult AddAwardToUser(Guid id)
+        //{
+        //    var model = Users.GetUser(id);
+        //    // var user = Users.GetUser(id);
+        //    return View(model);
+        //}
+
 
         public ActionResult UploadAvatar()
         {
