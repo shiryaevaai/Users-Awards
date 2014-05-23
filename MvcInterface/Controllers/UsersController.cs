@@ -22,7 +22,7 @@
             return View(model);
         }
 
-        [Authorize(Roles="RegUsers")]
+        //[Authorize(Roles="RegUsers")]
         public ActionResult Details(Guid id)
         {
             var model = Users.GetUser(id);

@@ -301,41 +301,78 @@
             }
         }
 
-        public bool SetUserImage(User user)
+        public bool SetUserImage(Guid id)
         {
             // wrong id, handle exception
-            if (this.GetUser(user.ID) != null)
+            if (this.GetUser(id) == null)
             {
                 return false;
             }
 
             try
             {
-                File.AppendAllLines(this._users_imageFile, new[] { CreateLineFromUserImage(user) });
+                RemoveUserImage(id);
+                File.AppendAllLines(this._users_imageFile, new[] { CreateImageLineFromUserImage(id) });
                 return true;
             }
             catch
             {
                 return false;
             }
-
         }
 
-        public bool RemoveUserImage(User user)
+        public bool GetUserImage(Guid id)
         {
             // wrong id, handle exception
-            if (this.GetUser(user.ID) != null)
+            if (this.GetUser(id) == null)
             {
                 return false;
             }
 
             try
             {
-                var users = this.GetAllImagess()
-                    .Where(n => n.ID != user.ID)
-                    .Select(n => CreateLineFromUserImage(n));
+                var list = this.GetAllImages()
+                    .Where(n => n.UserID == id)
+                    .Select(n => n);
+                if (list.Count() !=0 )
+                {
+                 return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool RemoveUserImage(Guid id)
+        {
+            // wrong id, handle exception
+            if (this.GetUser(id) == null)
+            {
+                return false;
+            }
+            ///?????
+            try
+            {
+                if (this.GetUserImage(id))
+                {
+                    var users = this.GetAllImages()
+                        .Where(n => n.UserID != id)                       
+                        .Select(n => CreateLineFromUserImage(n));
+
+                    var users2 = this.GetAllImages()
+                       .Where(n => n.UserID == id)
+                       .Select(n => n.Image);  ///?????
+                    // .Select(n => CreateLineFromUserImage(n));
  
-                File.WriteAllLines(this._users_imageFile, users);
+                    File.WriteAllLines(this._users_imageFile, users);
+                }
+
                 return true;
             }
             catch
@@ -404,15 +441,24 @@
             };
         }
 
-        private static string CreateLineFromUserImage(User user)
+        private static string CreateLineFromUserImage(UserImage userImage)
         {
             return string.Format(
                 "{0}{1}{2}",
-                user.ID.ToString(),
+                userImage.UserID.ToString(),
                 SEPARATOR_STRING,
-                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", user.ID.ToString()));
+                //Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", user.ID.ToString()));
+                userImage.Image);
         }
 
+        private static string CreateImageLineFromUserImage(Guid id)
+        {
+            return string.Format(
+                "{0}{1}{2}",
+                id.ToString(),
+                SEPARATOR_STRING,
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", id.ToString()));              
+        }
 
         private static UserImage CreateUserImageFromLine(string line)
         {
@@ -422,10 +468,7 @@
                 return null;
             }
 
-            return new UserImage(userFields[2])
-            {
-                UserID = Guid.Parse(userFields[0]),
-            };
+            return new UserImage(Guid.Parse(userFields[0]), userFields[1]);
         }
 
 

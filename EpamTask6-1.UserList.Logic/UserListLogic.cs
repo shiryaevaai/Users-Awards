@@ -199,15 +199,15 @@
 
         public bool SetUserImage(Guid userID)
         {
-            if (this._cash_user_dao.GetUser(userID) == null)
+            if (this._save_user_dao.GetUser(userID) == null)
             {
                 throw new ArgumentException("Пользователя с данным ID не существует");
             }
 
-            if (this._cash_user_dao.SetUserImage(this._cash_user_dao.GetUser(userID)))
+            if (this._save_user_dao.SetUserImage(userID))
             {
-                Thread cashThread = new Thread(this.UsersAndAwardsCashing);///////
-                cashThread.Start();
+                //Thread cashThread = new Thread(this.UsersAndAwardsCashing);///////
+                //cashThread.Start();
                 return true;
             }
             else
@@ -218,21 +218,35 @@
 
         public bool GetUserImage(Guid userID)
         {
-            return true;
+            if (this._save_user_dao.GetUser(userID) == null)
+            {
+                throw new ArgumentException("Пользователя с данным ID не существует");
+            }
+
+            if (this._save_user_dao.GetUserImage(userID))
+            {
+                //Thread cashThread = new Thread(this.UsersAndAwardsCashing);///////
+                //cashThread.Start();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
         }
 
         public bool RemoveUserImage(Guid userID)
         {
-            if (this._cash_user_dao.GetUser(userID) == null)
+            if (this._save_user_dao.GetUser(userID) == null)
             {
                 throw new ArgumentException("Пользователя с данным ID не существует");
             }
 
-            if (this._cash_user_dao.RemoveUserImage(this._cash_user_dao.GetUser(userID)))
+            if (this._save_user_dao.RemoveUserImage(userID))
             {
-                Thread cashThread = new Thread(this.UsersAndAwardsCashing); //////
-                cashThread.Start();
+               // Thread cashThread = new Thread(this.UsersAndAwardsCashing); //////
+               // cashThread.Start();
                 return true;
             }
             else

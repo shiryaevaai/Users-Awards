@@ -85,6 +85,21 @@
             }
         }
 
+        public bool SetUserImage(Guid id)
+        {
+            return true;
+        }
+
+        public bool GetUserImage(Guid id)
+        {
+            return true;
+        }
+
+        public bool RemoveUserImage(Guid id)
+        {
+            return true;
+        }
+
         //public bool AddAward(Award award)
         //{
         //    if (this.GetAward(award.ID) != null)

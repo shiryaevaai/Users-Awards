@@ -19,11 +19,11 @@
 
         bool SetAllUsers(IEnumerable<User> users);
 
-        public bool SetUserImage(User user);
+        bool SetUserImage(Guid id);
 
-        public bool GetUserImage(User user);
+        bool GetUserImage(Guid id);
 
-        public bool RemoveUserImage(User user);
+        bool RemoveUserImage(Guid id);
 
         //bool AddAward(Award award);
 
