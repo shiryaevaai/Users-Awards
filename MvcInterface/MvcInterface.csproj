@@ -134,6 +134,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AwardsController.cs" />
     <Compile Include="Controllers\FilesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -145,6 +146,7 @@
     <Compile Include="Models\BusinessLogicHelper.cs" />
     <Compile Include="Models\FileDescription.cs" />
     <Compile Include="Models\FileWorker.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -326,6 +328,7 @@
     <Content Include="Views\Files\UploadImage.cshtml" />
     <Content Include="Views\Users\AddAwardToUser.cshtml" />
     <Content Include="Views\Awards\UploadImage.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -359,7 +362,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>54375</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:49755/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

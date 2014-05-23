@@ -15,9 +15,13 @@
 
     public class Users
     {
-        public static Dictionary<Guid, string> _usersImageList = new Dictionary<Guid, string>();
+        //public static Dictionary<Guid, string> _usersImageList = new Dictionary<Guid, string>();
 
-        public static string DefaultImage = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", "default.jpg");
+        //public static string DefaultImage = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", "default.jpg");
+
+        // public static List<UserImage> _usersImageList = new List<UserImage>();
+
+        public static string DefaultImage = UserImage.DefaultUserImage;
 
         [HiddenInput(DisplayValue = false)]
         public Guid ID { get; set; }
@@ -76,10 +80,11 @@
             foreach (var item in list)
             {
                 Users user = new Users(item.ID, item.Name, item.DateOfBirth, item.Age, item.GetAwardList());
-                if (Users._usersImageList.ContainsKey(user.ID))
-                {
-                    user.SetImage();
-                }
+                //if (Users._usersImageList.ContainsKey(user.ID))
+                //{
+                //    user.SetImage();
+                //}
+                user.ImageAddr = BusinessLogicHelper._logic.GetUserImage(user.ID);
                 yield return user;
             }
         }
@@ -88,10 +93,11 @@
         {
             var item = BusinessLogicHelper._logic.GetUserByID(id);
             Users user = new Users(item.ID, item.Name, item.DateOfBirth, item.Age, item.GetAwardList());
-            if (Users._usersImageList.ContainsKey(user.ID))
-            {
-                user.SetImage();
-            }
+            //if (Users._usersImageList.ContainsKey(user.ID))
+            //{
+            //    user.SetImage();
+            //}
+            user.ImageAddr = BusinessLogicHelper._logic.GetUserImage(user.ID);
             user.GetUserNotHasAwards(user.ID);
             return user;
         }
@@ -163,27 +169,43 @@
 
         public void SetImage()
         {
-            if (!Users._usersImageList.ContainsKey(this.ID))
+            //if (!Users._usersImageList.ContainsKey(this.ID))
+            //{
+            //    Users._usersImageList.Add(this.ID, Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", this.ID.ToString()));
+            //    this.ImageAddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", this.ID.ToString());
+            //}
+            //else
+            //{
+            //    Users._usersImageList[this.ID] = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", this.ID.ToString());
+            //    this.ImageAddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", this.ID.ToString());
+            //}
+            if (BusinessLogicHelper._logic.SetUserImage(this.ID))
             {
-                Users._usersImageList.Add(this.ID, Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", this.ID.ToString()));
                 this.ImageAddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", this.ID.ToString());
             }
             else
             {
-                Users._usersImageList[this.ID] = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", this.ID.ToString());
-                this.ImageAddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", this.ID.ToString());
+                throw new Exception();
             }
         }
 
         public void RemoveImage()
         {
-            if (Users._usersImageList.ContainsKey(this.ID))
-            {
-                Users._usersImageList.Remove(this.ID);
-            }
+            //if (Users._usersImageList.ContainsKey(this.ID))
+            //{
+            //    Users._usersImageList.Remove(this.ID);
+            //}
             
-            this.ImageAddr = Users.DefaultImage;
-
+            //this.ImageAddr = Users.DefaultImage;
+            if (BusinessLogicHelper._logic.RemoveUserImage(this.ID))
+            {
+                this.ImageAddr = Users.DefaultImage;
+            }
+            else
+            {
+                throw new Exception();
+            }
+        
         }
         
     }

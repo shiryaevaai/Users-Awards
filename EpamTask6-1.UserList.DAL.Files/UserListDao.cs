@@ -18,10 +18,12 @@
         private const string USERS_FILE = "users.txt";
         private const string AWARDS_FILE = "awards.txt";
         private const string AWARDS_AND_USERS_FILE = "awards_and_users.txt";
+        private const string USERS_IMAGE_FILE = "users_image.txt";
        
         private string _usersFile;
         private string _awardsFile;
         private string _awards_and_usersFile;
+        private string _users_imageFile;
 
         public UserListDao()
         {           
@@ -29,6 +31,7 @@
             this._usersFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, USERS_FILE);
             this._awardsFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AWARDS_FILE);
             this._awards_and_usersFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AWARDS_AND_USERS_FILE);
+            this._users_imageFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, USERS_IMAGE_FILE);
         }
 
         public bool AddUser(User user)
@@ -41,10 +44,6 @@
 
             try
             {
-                if (!File.Exists(this._usersFile))
-                {
-                    return false;
-                }
 
                 File.AppendAllLines(this._usersFile, new[] { CreateLineFromUser(user) });
                 return true;
@@ -76,6 +75,20 @@
                 if (user != null)
                 {
                     yield return user;
+                }
+            }
+        }
+
+        public IEnumerable<UserImage> GetAllImages()
+        {
+            string[] lines = File.ReadAllLines(this._users_imageFile);
+ 
+            foreach (string line in lines)
+            {
+                var userImage = CreateUserImageFromLine(line);
+                if (userImage != null)
+                {
+                    yield return userImage;
                 }
             }
         }
@@ -286,7 +299,51 @@
             {
                 return false;
             }
-        }       
+        }
+
+        public bool SetUserImage(User user)
+        {
+            // wrong id, handle exception
+            if (this.GetUser(user.ID) != null)
+            {
+                return false;
+            }
+
+            try
+            {
+                File.AppendAllLines(this._users_imageFile, new[] { CreateLineFromUserImage(user) });
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+
+        public bool RemoveUserImage(User user)
+        {
+            // wrong id, handle exception
+            if (this.GetUser(user.ID) != null)
+            {
+                return false;
+            }
+
+            try
+            {
+                var users = this.GetAllImagess()
+                    .Where(n => n.ID != user.ID)
+                    .Select(n => CreateLineFromUserImage(n));
+ 
+                File.WriteAllLines(this._users_imageFile, users);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
 
         private static string CreateLineForUsersAward(Guid userID, Guid awardID)
         {
@@ -342,9 +399,35 @@
             }
 
             return new User(userFields[1], DateTime.Parse(userFields[2]))
-                {
-                    ID = Guid.Parse(userFields[0]),
-                };
+            {
+                ID = Guid.Parse(userFields[0]),
+            };
         }
+
+        private static string CreateLineFromUserImage(User user)
+        {
+            return string.Format(
+                "{0}{1}{2}",
+                user.ID.ToString(),
+                SEPARATOR_STRING,
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", user.ID.ToString()));
+        }
+
+
+        private static UserImage CreateUserImageFromLine(string line)
+        {
+            var userFields = line.Split(SEPARATOR_CHAR);
+            if (userFields.Length != 2)
+            {
+                return null;
+            }
+
+            return new UserImage(userFields[2])
+            {
+                UserID = Guid.Parse(userFields[0]),
+            };
+        }
+
+
     }
 }

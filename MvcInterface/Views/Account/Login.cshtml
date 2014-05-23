@@ -1,0 +1,29 @@
+﻿@model MvcInterface.Models.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+    string returnUrl = ViewBag.ReturnUrl;
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+    if (!string.IsNullOrWhiteSpace(returnUrl))
+    {
+      @Html.Hidden("returnUrl", returnUrl)
+
+    }
+    
+    <div>
+    @Html.LabelFor(m => m.Username)
+    @Html.EditorFor(m => m.Username)
+    </div>
+    
+    <div>
+    @Html.LabelFor(m => m.Password)
+    @Html.EditorFor(m => m.Password)
+    </div>
+    
+    <input type="submit" value="Log in" />
+}

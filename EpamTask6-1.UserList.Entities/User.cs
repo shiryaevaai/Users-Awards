@@ -1,5 +1,4 @@
-﻿
-namespace EpamTask6_1.UserList.Entities
+﻿namespace EpamTask6_1.UserList.Entities
 {
     using System;
     using System.Collections.Generic;
