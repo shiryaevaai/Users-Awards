@@ -39,7 +39,7 @@
 
                 @Html.Hidden("UserID", Model.ID)
                 @Html.Hidden("AwardID", item.ID)
-
+                @Html.AntiForgeryToken()
                 <p>
                     <input type="submit" value="Add" />
                 </p>

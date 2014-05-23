@@ -15,7 +15,6 @@
     {
         //
         // GET: /Users/
-
         // watch all users
         public ActionResult Index()
         {
@@ -35,7 +34,7 @@
         }
 
         [HttpPost]
-        // [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Users model)
         {
             if (ModelState.IsValid)
@@ -69,7 +68,7 @@
         }
 
         [HttpPost]
-        //  [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public ActionResult Delete(Users model)
         {
             //if (ModelState.IsValid)
@@ -104,11 +103,11 @@
         public ActionResult AddAwardToUser(Guid id)
         {
             var model = Users.GetUser(id);
-           // Guid UserID = id;
             return View(model);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult AddAwardToUser(Guid UserID, Guid AwardID)
         {
             var model = Users.GetUser(UserID);
@@ -134,7 +133,7 @@
         }
 
         [HttpPost]
-        //  [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public ActionResult UploadImage(Guid id, HttpPostedFileBase image)
         {
             Guid UserID = id;
@@ -147,7 +146,6 @@
             }
             catch
             {
-                // Users.DefaultImage = path;
                 return RedirectToAction("Details", new { id = UserID });
             }
 

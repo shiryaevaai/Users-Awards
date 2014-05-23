@@ -27,7 +27,12 @@
 </fieldset>
 @using (Html.BeginForm()) {
     <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
+        @Html.AntiForgeryToken()
+        <input type="submit" value="Delete" /> 
+       
     </p>
 }
+
+<p>
+ @Html.ActionLink("Back to List", "Index")
+ </p>

@@ -22,14 +22,6 @@
         }
 
         //
-        // GET: /Awards/Details/5
-
-        //public ActionResult Details(int id)
-        //{
-        //    return View();
-        //}
-
-        //
         // GET: /Awards/Create
 
         public ActionResult Create()
@@ -40,6 +32,7 @@
         //
         // POST: /Awards/Create
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Awards model)
         {
             if (ModelState.IsValid)
@@ -72,6 +65,7 @@
             return File(FileWorker.GetFile(path), "image/jpeg", path);
         }
 
+        
         public ActionResult UploadImage(Guid id)
         {
             Guid AwardID = id;
@@ -79,7 +73,7 @@
         }
 
         [HttpPost]
-        //  [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public ActionResult UploadImage(Guid id, HttpPostedFileBase image)
         {
             Guid AwardID = id;
@@ -91,8 +85,7 @@
                 award.SetImage();
             }
             catch
-            {
-               
+            {               
                 //return RedirectToAction("Details", new { id = AwardID });
                 return RedirectToAction("Index");
             }

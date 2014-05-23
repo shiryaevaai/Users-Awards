@@ -9,6 +9,7 @@
 
 @using (Html.BeginForm("UploadImage", "Awards", FormMethod.Post, new { enctype = "multipart/form-data", id = Model}))
 {
+    @Html.AntiForgeryToken()
     <input type="file" name="image" />    
     <input type="submit" value="Load file"/>
 }
