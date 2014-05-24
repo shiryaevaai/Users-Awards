@@ -144,6 +144,7 @@
     </Compile>
     <Compile Include="Models\Awards.cs" />
     <Compile Include="Models\BusinessLogicHelper.cs" />
+    <Compile Include="Models\ConfirmationModel.cs" />
     <Compile Include="Models\FileDescription.cs" />
     <Compile Include="Models\FileWorker.cs" />
     <Compile Include="Models\LoginModel.cs" />
@@ -328,6 +329,8 @@
     <Content Include="Views\Users\AddAwardToUser.cshtml" />
     <Content Include="Views\Awards\UploadImage.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\UserInfo.cshtml" />
+    <Content Include="Views\Account\Logout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

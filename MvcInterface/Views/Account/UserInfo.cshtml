@@ -1,0 +1,13 @@
+﻿<span class="text-danger">
+    @if (User.Identity != null && User.Identity.IsAuthenticated)
+    {
+        <span class="glyphicon glyphicon-user"></span>
+        <span> Hello, @User.Identity.Name </span>
+        @Html.ActionLink("Log out", "Logout", "Account")
+    }
+    else
+    {
+       <span> Hello, guest </span>
+        @Html.ActionLink("Log out", "Logout", "Account")
+    }
+</span>

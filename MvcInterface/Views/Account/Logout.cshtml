@@ -1,0 +1,13 @@
+﻿@model MvcInterface.Models.ConfirmationModel
+
+@{
+    ViewBag.Title = "Logout";
+}
+
+<h2>Logout?</h2>
+
+@using (Html.BeginForm())
+{
+    <button name="Confirm" value="true" >Yes</button>
+    <button name="Confirm" value="false" >No</button>
+}

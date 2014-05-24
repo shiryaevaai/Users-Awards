@@ -34,6 +34,30 @@
             return View(model);
         }
 
+        [ChildActionOnly]
+        public ActionResult UserInfo()
+        {
+            
+            return PartialView();
+        }
+
+        public ActionResult Logout()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Logout(ConfirmationModel model)
+        {
+          
+            if (model.Confirm)
+            {
+                LoginModel.Logout();
+            }
+           
+            return RedirectToAction("Index", "Home");
+        }
+
         //
         // GET: /Account/Details/5
 
