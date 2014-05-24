@@ -147,6 +147,21 @@
             {
                 return false;
             }
-        }  
+        }
+
+        public bool SetAwardImage(Guid id)
+        {
+            return true;
+        }
+
+        public bool GetAwardImage(Guid id)
+        {
+            return true;
+        }
+
+        public bool RemoveAwardImage(Guid id)
+        {
+            return true;
+        }
     }
 }

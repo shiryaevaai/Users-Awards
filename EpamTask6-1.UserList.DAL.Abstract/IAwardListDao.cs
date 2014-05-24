@@ -26,7 +26,13 @@ namespace EpamTask6_1.UserList.DAL.Abstract
 
         bool SetAllAwards(IEnumerable<Award> awards);
 
-        bool SetAllUserAwards(IEnumerable<UsersAward> _usersAndAwardsList);    
+        bool SetAllUserAwards(IEnumerable<UsersAward> _usersAndAwardsList);
+
+        bool SetAwardImage(Guid id);
+
+        bool GetAwardImage(Guid id);
+
+        bool RemoveAwardImage(Guid id);
 
     }
 }

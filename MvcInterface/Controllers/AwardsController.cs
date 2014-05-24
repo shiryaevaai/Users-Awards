@@ -85,23 +85,19 @@
                 award.SetImage();
             }
             catch
-            {               
-                //return RedirectToAction("Details", new { id = AwardID });
+            {  
                 return RedirectToAction("Index");
             }
-
-            //return RedirectToAction("Details", new { id = AwardID });
+            
             return RedirectToAction("Index");
-        }
+        }   
 
-        //  [ValidateAntiForgeryToken]
         public ActionResult RemoveImage(Guid id)
         {
             Awards award = Awards.GetAward(id);
             award.RemoveImage();
             Guid AwardID = id;
-            return RedirectToAction("Index");
-            //return RedirectToAction("Details", new { id = AwardID });
+            return RedirectToAction("Index");            
         }
       
 

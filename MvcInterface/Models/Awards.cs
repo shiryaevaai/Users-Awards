@@ -13,9 +13,11 @@
 
     public class Awards
     {
-        public static Dictionary<Guid, string> _awardsImageList = new Dictionary<Guid, string>();
+        //public static Dictionary<Guid, string> _awardsImageList = new Dictionary<Guid, string>();
 
-        public static string DefaultImage = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", "default.jpg");
+        //public static string DefaultImage = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", "default.jpg");
+
+        public static string DefaultImage = AwardImage.DefaultAwardImage;
 
         [Required]
         [Display(Name = "Название")]
@@ -48,9 +50,17 @@
             foreach (var item in list)
             {                
                 Awards award = new Awards(item.ID, item.Title);
-                if (Awards._awardsImageList.ContainsKey(item.ID))
+                //if (Awards._awardsImageList.ContainsKey(item.ID))
+                //{
+                //    award.SetImage();
+                //}
+                if (BusinessLogicHelper._logic.GetAwardImage(award.ID))
                 {
-                    award.SetImage();
+                    award.ImageAddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", award.ID.ToString());
+                }
+                else
+                {
+                    award.ImageAddr = Awards.DefaultImage;
                 }
                 yield return award;
             }
@@ -60,9 +70,13 @@
         {
             var item = BusinessLogicHelper._logic.GetAwardByID(id);
             Awards award = new Awards(item.ID, item.Title);
-            if (Awards._awardsImageList.ContainsKey(item.ID))
+            if (BusinessLogicHelper._logic.GetAwardImage(award.ID))
             {
-                award.SetImage();
+                award.ImageAddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", award.ID.ToString());
+            }
+            else
+            {
+                award.ImageAddr = Awards.DefaultImage;
             }
             return award;
         }
@@ -87,25 +101,27 @@
 
         public void SetImage()
         {
-            if (!Awards._awardsImageList.ContainsKey(this.ID))
-            {
-                Awards._awardsImageList.Add(this.ID, Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", this.ID.ToString()));
-                this.ImageAddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", this.ID.ToString());
-            }
-            else
-            {
-                Awards._awardsImageList[this.ID] = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", this.ID.ToString());
-                this.ImageAddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", this.ID.ToString());
-            }
+            //if (!Awards._awardsImageList.ContainsKey(this.ID))
+            //{
+            //    Awards._awardsImageList.Add(this.ID, Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", this.ID.ToString()));
+            //    this.ImageAddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", this.ID.ToString());
+            //}
+            //else
+            //{
+            //    Awards._awardsImageList[this.ID] = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", this.ID.ToString());
+            //    this.ImageAddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", this.ID.ToString());
+            //}
+            BusinessLogicHelper._logic.SetAwardImage(this.ID);
+            this.ImageAddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", this.ID.ToString());
         }
 
         public void RemoveImage()
         {
-            if (Awards._awardsImageList.ContainsKey(this.ID))
-            {
-                Awards._awardsImageList.Remove(this.ID);
-            }
-
+            //if (Awards._awardsImageList.ContainsKey(this.ID))
+            //{
+            //    Awards._awardsImageList.Remove(this.ID);
+            //}
+            BusinessLogicHelper._logic.RemoveAwardImage(this.ID);
             this.ImageAddr = Awards.DefaultImage;
 
         }

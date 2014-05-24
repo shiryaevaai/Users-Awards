@@ -256,5 +256,64 @@
 
         }
 
+        public bool SetAwardImage(Guid awardID)
+        {
+            if (this._save_award_dao.GetAward(awardID) == null)
+            {
+                throw new ArgumentException("Награды с данным ID не существует");
+            }
+
+            if (this._save_award_dao.SetAwardImage(awardID))
+            {
+                //Thread cashThread = new Thread(this.UsersAndAwardsCashing);///////
+                //cashThread.Start();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool GetAwardImage(Guid awardID)
+        {
+            if (this._save_award_dao.GetAward(awardID) == null)
+            {
+                throw new ArgumentException("Награды с данным ID не существует");
+            }
+
+            if (this._save_award_dao.GetAwardImage(awardID))
+            {
+                //Thread cashThread = new Thread(this.UsersAndAwardsCashing);///////
+                //cashThread.Start();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public bool RemoveAwardImage(Guid awardID)
+        {
+            if (this._save_award_dao.GetAward(awardID) == null)
+            {
+                throw new ArgumentException("Награды с данным ID не существует");
+            }
+
+            if (this._save_award_dao.RemoveAwardImage(awardID))
+            {
+                // Thread cashThread = new Thread(this.UsersAndAwardsCashing); //////
+                // cashThread.Start();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
     }
 }

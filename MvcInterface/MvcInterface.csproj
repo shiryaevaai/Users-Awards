@@ -147,7 +147,7 @@
     <Compile Include="Models\FileDescription.cs" />
     <Compile Include="Models\FileWorker.cs" />
     <Compile Include="Models\LoginModel.cs" />
-    <Compile Include="Models\Users.cs" />
+    <Compile Include="Views\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -315,7 +315,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Users\Create.cshtml" />
-    <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Delete.cshtml" />
     <Content Include="Views\Users\UserAwards.cshtml" />
     <Content Include="Views\Users\GetUserAwards.cshtml" />

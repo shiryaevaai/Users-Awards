@@ -10,6 +10,15 @@
 @using (Html.BeginForm("UploadImage", "Users", FormMethod.Post, new { enctype = "multipart/form-data", id = Model}))
 {
     @Html.AntiForgeryToken()
+    <div>
     <input type="file" name="image" />    
+    </div>
+    
+    <div>
     <input type="submit" value="Load file"/>
+    </div>
 }
+
+<div>
+    @Html.ActionLink("Back to Details", "Details", new { id=Model })
+</div>

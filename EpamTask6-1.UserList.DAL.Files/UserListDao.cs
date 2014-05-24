@@ -26,8 +26,7 @@
         private string _users_imageFile;
 
         public UserListDao()
-        {           
-
+        {   
             this._usersFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, USERS_FILE);
             this._awardsFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AWARDS_FILE);
             this._awards_and_usersFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AWARDS_AND_USERS_FILE);
@@ -44,7 +43,6 @@
 
             try
             {
-
                 File.AppendAllLines(this._usersFile, new[] { CreateLineFromUser(user) });
                 return true;
             }
@@ -61,10 +59,10 @@
 
         public IEnumerable<User> GetAllUsers()
         {
-            //if (!File.Exists(this._usersFile))
-            //{
-            //    throw new FileNotFoundException("Входной файл не найден!");
-            //}
+            if (!File.Exists(this._usersFile))
+            {
+                throw new FileNotFoundException("Входной файл не найден!");
+            }
 
             string[] lines = File.ReadAllLines(this._usersFile);  
             
@@ -81,6 +79,11 @@
 
         public IEnumerable<UserImage> GetAllImages()
         {
+            if (!File.Exists(this._users_imageFile))
+            {
+                throw new FileNotFoundException("Входной файл не найден!");
+            }
+
             string[] lines = File.ReadAllLines(this._users_imageFile);
  
             foreach (string line in lines)
@@ -105,15 +108,8 @@
                 var users = this.GetAllUsers()
                     .Where(n => n.ID != id)
                     .Select(n => CreateLineFromUser(n));
-                // .Select(CreateLineFromUser);
-
+             
                 File.WriteAllLines(this._usersFile, users);
-
-                // var ua = GetAllUserAwards()
-                //    .Where(n => n.Value.Key == id)
-                //    .Select(n => n);                               
-
-                // return SetAllUserAwards(ua.ToDictionary(n=>n.Key));
                 return true;                
             }
             catch
@@ -311,8 +307,8 @@
 
             try
             {
-                RemoveUserImage(id);
-                File.AppendAllLines(this._users_imageFile, new[] { CreateImageLineFromUserImage(id) });
+                this.RemoveUserImage(id);
+                File.AppendAllLines(this._users_imageFile, new[] { CreateLineFromUserImageID(id) });
                 return true;
             }
             catch
@@ -334,9 +330,10 @@
                 var list = this.GetAllImages()
                     .Where(n => n.UserID == id)
                     .Select(n => n);
-                if (list.Count() !=0 )
+
+                if (list.Count() != 0)
                 {
-                 return true;
+                    return true;
                 }
                 else
                 {
@@ -356,21 +353,22 @@
             {
                 return false;
             }
-            ///?????
+         
             try
             {
                 if (this.GetUserImage(id))
                 {
-                    var users = this.GetAllImages()
-                        .Where(n => n.UserID != id)                       
-                        .Select(n => CreateLineFromUserImage(n));
+                    var images = this.GetAllImages()
+                    .Where(n => n.UserID != id)
+                    .Select(n => n);
 
-                    var users2 = this.GetAllImages()
-                       .Where(n => n.UserID == id)
-                       .Select(n => n.Image);  ///?????
-                    // .Select(n => CreateLineFromUserImage(n));
- 
-                    File.WriteAllLines(this._users_imageFile, users);
+                    List<string> resLines = new List<string>();
+                    foreach (var res in images)
+                    {
+                        resLines.Add(CreateLineFromUserImageID(res.UserID));
+                    }
+
+                    File.WriteAllLines(this._users_imageFile, resLines);
                 }
 
                 return true;
@@ -379,7 +377,6 @@
             {
                 return false;
             }
-
         }
 
         private static string CreateLineForUsersAward(Guid userID, Guid awardID)
@@ -446,12 +443,11 @@
             return string.Format(
                 "{0}{1}{2}",
                 userImage.UserID.ToString(),
-                SEPARATOR_STRING,
-                //Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", user.ID.ToString()));
+                SEPARATOR_STRING,                
                 userImage.Image);
         }
 
-        private static string CreateImageLineFromUserImage(Guid id)
+        private static string CreateLineFromUserImageID(Guid id)
         {
             return string.Format(
                 "{0}{1}{2}",
@@ -470,7 +466,5 @@
 
             return new UserImage(Guid.Parse(userFields[0]), userFields[1]);
         }
-
-
     }
 }

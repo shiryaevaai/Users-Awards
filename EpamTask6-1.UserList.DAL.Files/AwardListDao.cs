@@ -18,15 +18,18 @@
         
         private const string AWARDS_FILE = "awards.txt";
         private const string AWARDS_AND_USERS_FILE = "awards_and_users.txt";
+        private const string AWARDS_IMAGE_FILE = "awards_image.txt";
 
         private string _awardsFile;
         private string _awards_and_usersFile;
+        private string _awards_imageFile;
 
         public AwardListDao()
         {
             // var val1 = ConfigurationManager.AppSettings["xyz"];
             this._awardsFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AWARDS_FILE);
             this._awards_and_usersFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AWARDS_AND_USERS_FILE);
+            this._awards_imageFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AWARDS_IMAGE_FILE);
         }
 
         public bool AddAward(Award award)
@@ -189,6 +192,107 @@
             }
         }
 
+        public IEnumerable<AwardImage> GetAllImages()
+        {
+            if (!File.Exists(this._awards_imageFile))
+            {
+                throw new FileNotFoundException("Входной файл не найден!");
+            }
+
+            string[] lines = File.ReadAllLines(this._awards_imageFile);
+
+            foreach (string line in lines)
+            {
+                var awardImage = CreateAwardImageFromLine(line);
+                if (awardImage != null)
+                {
+                    yield return awardImage;
+                }
+            }
+        }
+
+        public bool SetAwardImage(Guid id)
+        {
+            // wrong id, handle exception
+            if (this.GetAward(id) == null)
+            {
+                return false;
+            }
+
+            try
+            {
+                this.RemoveAwardImage(id);
+                File.AppendAllLines(this._awards_imageFile, new[] { CreateLineFromAwardImageID(id) });
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool GetAwardImage(Guid id)
+        {
+            // wrong id, handle exception
+            if (this.GetAward(id) == null)
+            {
+                return false;
+            }
+
+            try
+            {
+                var list = this.GetAllImages()
+                    .Where(n => n.AwardID == id)
+                    .Select(n => n);
+
+                if (list.Count() != 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool RemoveAwardImage(Guid id)
+        {
+            // wrong id, handle exception
+            if (this.GetAward(id) == null)
+            {
+                return false;
+            }
+
+            try
+            {
+                if (this.GetAwardImage(id))
+                {
+                    var images = this.GetAllImages()
+                    .Where(n => n.AwardID != id)
+                    .Select(n => n);
+
+                    List<string> resLines = new List<string>();
+                    foreach (var res in images)
+                    {
+                        resLines.Add(CreateLineFromAwardImageID(res.AwardID));
+                    }
+
+                    File.WriteAllLines(this._awards_imageFile, resLines);
+                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         private static string CreateLineForUsersAward(Guid userID, Guid awardID)
         {
             return string.Format("{0}{1}{2}", userID.ToString(), SEPARATOR_STRING, awardID.ToString());
@@ -222,6 +326,35 @@
             {
                 ID = Guid.Parse(awardFields[0]),
             };
+        }
+
+        private static string CreateLineFromAwardImage(AwardImage awardImage)
+        {
+            return string.Format(
+                "{0}{1}{2}",
+                awardImage.AwardID.ToString(),
+                SEPARATOR_STRING,
+                awardImage.Image);
+        }
+
+        private static string CreateLineFromAwardImageID(Guid id)
+        {
+            return string.Format(
+                "{0}{1}{2}",
+                id.ToString(),
+                SEPARATOR_STRING,
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", id.ToString()));
+        }
+
+        private static AwardImage CreateAwardImageFromLine(string line)
+        {
+            var userFields = line.Split(SEPARATOR_CHAR);
+            if (userFields.Length != 2)
+            {
+                return null;
+            }
+
+            return new AwardImage(Guid.Parse(userFields[0]), userFields[1]);
         }
 
     }
