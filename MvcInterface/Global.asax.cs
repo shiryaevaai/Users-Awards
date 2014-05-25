@@ -25,28 +25,28 @@ namespace MvcInterface
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
 
-        protected void Application_AuthenticateRequest()
-        {
-            if (User == null)
-            {
-                return;
-            }
+        //protected void Application_AuthenticateRequest()
+        //{
+        //    if (User == null)
+        //    {
+        //        return;
+        //    }
 
-            var identity = User.Identity;
-            var principal = new GenericPrincipal(identity, GetRolesFor(identity.Name));
-            Context.User = principal;
-        }
+        //    var identity = User.Identity;
+        //    var principal = new GenericPrincipal(identity, GetRolesFor(identity.Name));
+        //    Context.User = principal;
+        //}
 
-        private string[] GetRolesFor(string userName)
-        {
-            switch (userName)
-            {
-                case "1":
-                    return new[] { "Admin", "User" };
+        //private string[] GetRolesFor(string userName)
+        //{
+        //    switch (userName)
+        //    {
+        //        case "1":
+        //            return new[] { "Admin", "User" };
 
-                default:
-                    return new string[0];
-            }
-        }
+        //        default:
+        //            return new string[0];
+        //    }
+        //}
     }
 }

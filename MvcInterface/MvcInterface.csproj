@@ -148,6 +148,7 @@
     <Compile Include="Models\FileDescription.cs" />
     <Compile Include="Models\FileWorker.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\MyRoleProvider.cs" />
     <Compile Include="Views\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
