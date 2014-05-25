@@ -13,9 +13,7 @@
 
     public class Awards
     {
-        //public static Dictionary<Guid, string> _awardsImageList = new Dictionary<Guid, string>();
-
-        //public static string DefaultImage = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", "default.jpg");
+        public static string ImageDirectory = AwardImage.AwardImageDirectory;
 
         public static string DefaultImage = AwardImage.DefaultAwardImage;
 
@@ -34,14 +32,15 @@
         public Awards(string title)
         {
             this.Title = title;
-            this.ImageAddr = DefaultImage;            
+            this.ImageAddr = Path.Combine(Awards.ImageDirectory, Awards.DefaultImage);          
         }
 
         public Awards(Guid id, string title)
         {
             this.ID = id;
             this.Title = title;
-            this.ImageAddr = DefaultImage;
+           // this.ImageAddr = DefaultImage;
+            this.ImageAddr = Path.Combine(Awards.ImageDirectory, Awards.DefaultImage);    
         }
 
         public static IEnumerable<Awards> GetAllAwards()
@@ -50,17 +49,15 @@
             foreach (var item in list)
             {                
                 Awards award = new Awards(item.ID, item.Title);
-                //if (Awards._awardsImageList.ContainsKey(item.ID))
-                //{
-                //    award.SetImage();
-                //}
                 if (BusinessLogicHelper._logic.GetAwardImage(award.ID))
                 {
-                    award.ImageAddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", award.ID.ToString());
+                    //award.ImageAddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", award.ID.ToString());
+                    award.ImageAddr = Path.Combine(Awards.ImageDirectory, award.ID.ToString());
                 }
                 else
                 {
-                    award.ImageAddr = Awards.DefaultImage;
+                    //award.ImageAddr = Awards.DefaultImage;
+                    award.ImageAddr = Path.Combine(Awards.ImageDirectory, Awards.DefaultImage);
                 }
                 yield return award;
             }
@@ -72,11 +69,11 @@
             Awards award = new Awards(item.ID, item.Title);
             if (BusinessLogicHelper._logic.GetAwardImage(award.ID))
             {
-                award.ImageAddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", award.ID.ToString());
+                award.ImageAddr = Path.Combine(Awards.ImageDirectory, award.ID.ToString());
             }
             else
             {
-                award.ImageAddr = Awards.DefaultImage;
+                award.ImageAddr = Path.Combine(Awards.ImageDirectory, Awards.DefaultImage);
             }
             return award;
         }
@@ -112,7 +109,8 @@
             //    this.ImageAddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", this.ID.ToString());
             //}
             BusinessLogicHelper._logic.SetAwardImage(this.ID);
-            this.ImageAddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", this.ID.ToString());
+            //this.ImageAddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", this.ID.ToString());
+            this.ImageAddr = Path.Combine(Awards.ImageDirectory, this.ID.ToString());
         }
 
         public void RemoveImage()
@@ -122,7 +120,8 @@
             //    Awards._awardsImageList.Remove(this.ID);
             //}
             BusinessLogicHelper._logic.RemoveAwardImage(this.ID);
-            this.ImageAddr = Awards.DefaultImage;
+            //this.ImageAddr = Awards.DefaultImage;
+            this.ImageAddr = Path.Combine(Users.ImageDirectory, Awards.DefaultImage);
 
         }
 

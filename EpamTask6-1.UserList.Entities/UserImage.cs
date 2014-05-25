@@ -9,7 +9,9 @@
 
     public class UserImage
     {
-        private static string defaultUserImage = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", "default.jpg");
+        private static string userImageDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages");
+
+        private static string defaultUserImage = "default.jpg";
 
         private string image;
 
@@ -22,9 +24,23 @@
                 return defaultUserImage;
             }
 
-            set
+            private set
             {
                 defaultUserImage = value;
+
+            }
+        }
+
+        public static string UserImageDirectory
+        {
+            get
+            {
+                return userImageDirectory;
+            }
+
+            private set
+            {
+                userImageDirectory = value;
 
             }
         }

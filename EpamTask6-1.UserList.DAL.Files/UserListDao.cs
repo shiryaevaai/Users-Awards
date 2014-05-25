@@ -453,7 +453,8 @@
                 "{0}{1}{2}",
                 id.ToString(),
                 SEPARATOR_STRING,
-                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", id.ToString()));              
+                id.ToString());
+                //Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", id.ToString()));              
         }
 
         private static UserImage CreateUserImageFromLine(string line)

@@ -9,7 +9,11 @@
 
     public class AwardImage
     {
-        private static string defaultAwardImage = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", "default.jpg");
+        private static string awardImageDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages");
+
+        private static string defaultAwardImage = "default.jpg";
+
+       // private static string defaultAwardImage = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", "default.jpg");
 
         private string image;
 
@@ -25,6 +29,20 @@
             set
             {
                 defaultAwardImage = value;
+
+            }
+        }
+
+        public static string AwardImageDirectory
+        {
+            get
+            {
+                return awardImageDirectory;
+            }
+
+            private set
+            {
+                awardImageDirectory = value;
 
             }
         }

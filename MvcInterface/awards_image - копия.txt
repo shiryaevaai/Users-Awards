@@ -1,0 +1,2 @@
+6858dd86-52bb-4098-817d-2833e37f44b0▄C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\App_Data\AwardImages\6858dd86-52bb-4098-817d-2833e37f44b0
+3a8a083d-e3a8-45a4-893d-837c22b291aa▄C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\App_Data\AwardImages\3a8a083d-e3a8-45a4-893d-837c22b291aa

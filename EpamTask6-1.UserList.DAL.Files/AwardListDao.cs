@@ -343,7 +343,7 @@
                 "{0}{1}{2}",
                 id.ToString(),
                 SEPARATOR_STRING,
-                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", id.ToString()));
+                id.ToString());
         }
 
         private static AwardImage CreateAwardImageFromLine(string line)

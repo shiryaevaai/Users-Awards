@@ -16,6 +16,7 @@
         //
         // GET: /Users/
         // watch all users
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var model = Users.GetAllUsers();
@@ -141,7 +142,7 @@
             try
             {
                 Users user = Users.GetUser(id);
-                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "UserImages", user.ID.ToString());
+                string path = Path.Combine(Users.ImageDirectory, user.ID.ToString());
                 FileWorker.SaveFile(image, path);
                 user.SetImage();
             }
@@ -152,11 +153,6 @@
 
             return RedirectToAction("Details", new { id = UserID });
         }
-
-        //public ActionResult GetImage(Users user)
-        //{
-        //    return File(FileWorker.GetFile(user.ImageAddr), "image/jpeg", user.ImageAddr);
-        //}
 
         //  [ValidateAntiForgeryToken]
         public ActionResult RemoveImage(Guid id)

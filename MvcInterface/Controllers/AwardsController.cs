@@ -80,7 +80,7 @@
             try
             {
                 Awards award = Awards.GetAward(id);
-                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", award.ID.ToString());
+                string path = Path.Combine(Awards.ImageDirectory, award.ID.ToString());
                 FileWorker.SaveFile(image, path);
                 award.SetImage();
             }
