@@ -47,6 +47,10 @@
 
         public string Image { get; set; }
 
+        public UserImage()
+        {
+        }
+
         public UserImage(Guid id, string address)
         {
             UserID = id;

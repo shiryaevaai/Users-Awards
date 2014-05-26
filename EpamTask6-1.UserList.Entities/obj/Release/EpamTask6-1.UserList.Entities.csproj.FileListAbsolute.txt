@@ -13,12 +13,11 @@ C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserL
 C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.csprojResolveAssemblyReference.cache
 C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.dll
 C:\Users\111\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.pdb
-C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\bin\Release\EpamTask6-1.UserList.Entities.dll
-C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\bin\Release\EpamTask6-1.UserList.Entities.pdb
-C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.dll
-C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.pdb
 C:\Users\user\Desktop\210514\EpamTask6-1\EpamTask6-1.UserList.Entities\bin\Release\EpamTask6-1.UserList.Entities.dll
 C:\Users\user\Desktop\210514\EpamTask6-1\EpamTask6-1.UserList.Entities\bin\Release\EpamTask6-1.UserList.Entities.pdb
 C:\Users\user\Desktop\210514\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.dll
 C:\Users\user\Desktop\210514\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.pdb
-C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\bin\Release\EpamTask6-1.UserList.Entities.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\bin\Release\EpamTask6-1.UserList.Entities.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.Entities\obj\Release\EpamTask6-1.UserList.Entities.pdb

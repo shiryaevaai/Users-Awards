@@ -120,6 +120,10 @@
             return this._awardList;     // ??
         }
 
+        public User()
+        {
+        }
+
         public User(string name, DateTime dateOfBirth)
         {
             this.ID = Guid.NewGuid();

@@ -32,6 +32,10 @@ namespace EpamTask6_1.UserList.Entities
             }
         }
 
+        public Award()
+        {
+        }
+
         public Award(string title)
         {
             this.ID = Guid.NewGuid();

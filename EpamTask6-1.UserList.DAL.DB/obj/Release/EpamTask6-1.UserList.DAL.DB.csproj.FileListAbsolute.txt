@@ -1,0 +1,1 @@
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.DB\obj\Release\EpamTask6-1.UserList.DAL.DB.csprojResolveAssemblyReference.cache

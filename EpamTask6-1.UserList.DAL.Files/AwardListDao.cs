@@ -26,10 +26,11 @@
 
         public AwardListDao()
         {
-            // var val1 = ConfigurationManager.AppSettings["xyz"];
+            var val1 = ConfigurationManager.AppSettings["xyz"];
             this._awardsFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AWARDS_FILE);
             this._awards_and_usersFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AWARDS_AND_USERS_FILE);
             this._awards_imageFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AWARDS_IMAGE_FILE);
+            
         }
 
         public bool AddAward(Award award)
