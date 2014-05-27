@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.IO;
     using System.Linq;
     using System.Text;
@@ -13,6 +14,7 @@
 
         private static string defaultUserImage = "default.jpg";
 
+        [StringLength(36, ErrorMessage = "Длина строки должна быть равна 36 символам")]
         private string image;
 
         public Guid UserID { get; set; }

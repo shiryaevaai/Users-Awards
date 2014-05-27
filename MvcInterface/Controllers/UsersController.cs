@@ -102,6 +102,13 @@
             return PartialView(model);
         }
 
+        [Authorize(Roles = "User, Admin")]
+        public ActionResult GetUserAwardsToIndex(Guid id)
+        {
+            var model = Users.GetUserAwards(id);
+            return PartialView(model);
+        }
+
         [Authorize(Roles = "Admin")]
         public ActionResult AddAwardToUser(Guid id)
         {

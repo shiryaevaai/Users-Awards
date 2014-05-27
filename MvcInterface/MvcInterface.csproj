@@ -239,6 +239,7 @@
     <Content Include="Scripts\jquery-ui-1.10.4.js" />
     <Content Include="Scripts\jquery-ui-1.10.4.min.js" />
     <Content Include="Scripts\jquery-ui.unobtrusive.js" />
+    <Content Include="Scripts\jquery.dropdown.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -339,6 +340,7 @@
     <Content Include="Views\Account\DeleteRole.cshtml" />
     <Content Include="Views\Account\AddRole.cshtml" />
     <Content Include="Web.sitemap" />
+    <Content Include="Views\Users\GetUserAwardsToIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

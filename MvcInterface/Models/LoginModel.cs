@@ -12,9 +12,13 @@
 
     public class LoginModel
     {
+        [Required]
+        [StringLength(255, MinimumLength = 1, ErrorMessage = "Длина строки должна быть от 1 до 255 символов")]
         public string Username { get; set; }
 
         [DataType(DataType.Password)]
+        [Required]
+        [StringLength(255, MinimumLength = 1, ErrorMessage = "Длина строки должна быть от 1 до 255 символов")]
         public string Password { get; set; }
 
         internal bool TryToLogin()

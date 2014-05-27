@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<MvcInterface.Models.Users>
 
 @{
-    ViewBag.Title = "Users";
+    ViewBag.Title = "Users";    
 }
 
 <h2>Users</h2>
@@ -21,9 +21,12 @@
         </th>
 
         <th></th>
+
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
+    var awList = item._awardList;
     <tr>
          <td>
             <div class="row-fluid show-grid">
@@ -48,8 +51,12 @@
             <td>
                @Html.ActionLink("Details", "Details", new { id=item.ID }) 
             </td>
+            
+            <td>
+                @Html.Action("GetUserAwardsToIndex", "Users", new { id=item.ID })
+            </td>
         }
     </tr>
 }
 
-</table>
+</table>    

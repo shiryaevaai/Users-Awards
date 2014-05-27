@@ -2,15 +2,20 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
 
     public class User
     {
+        [StringLength(255, MinimumLength = 1, ErrorMessage = "Длина строки должна быть от 1 до 255 символов")]
         private string name;
+
         private DateTime dateOfBirth;
+
         private List<Guid> _awardList = new List<Guid>();
+
         public Guid ID { get; set; }
 
         public string Name

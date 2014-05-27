@@ -9,18 +9,18 @@
 else
 {
     <table class="table">
+     
         <tr>
-            <th></th>
-            <th>
-                Award Title
-            </th>        
+             @foreach (var item in Model) {
+            <th> @Html.DisplayFor(modelItem => item.Title)</th>  
+             }       
         </tr>
-
-    @foreach (var item in Model) {
+        
         <tr>
+        @foreach (var item in Model) {
+        
             <td>
             <div class="row-fluid show-grid">
-
                 <div class="span1" >
                      <img src="@Url.Action("GetAwardImage", "Awards", new { path = item.ImageAddr })" class="img-thumbnail" />
                 </div>
@@ -28,15 +28,11 @@ else
                 <div class="span2" ></div>
                 <div class="span4" ></div>
                 <div class="span4" ></div>
-
             </div>
             </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>      
+        }
         </tr>
-    }
-
+    
     </table>
 }
+

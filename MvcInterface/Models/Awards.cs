@@ -20,6 +20,7 @@
         [Required]
         [Display(Name = "Название")]
         [Remote("CheckAwardName", "Awards")]
+        [StringLength(255, MinimumLength = 1, ErrorMessage = "Длина строки должна быть от 1 до 255 символов")]
         public string Title { get; set; }
         
         [HiddenInput(DisplayValue = false)]
