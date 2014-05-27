@@ -8,6 +8,7 @@
 
     using MvcInterface.Models;
     using System.Web.UI;
+    using EpamTask6_1.UserList.Entities;
     
     public class AccountController : Controller
     {
@@ -112,37 +113,37 @@
             }
         }
 
-        //
         // GET: /Account/Delete/5
          [Authorize(Roles = "Admin")]
-        public ActionResult Delete(int id)
+        public ActionResult DeleteRole(Guid AccountID)
         {
-            return View();
+            var model = MyRoleProvider.GetAccount(AccountID);
+            model.RoleList = MyRoleProvider.GetRolesForUser(AccountID).ToList();
+            return View(model);
         }
 
-        //
         // POST: /Account/Delete/5
-
         [HttpPost]
         [Authorize(Roles = "Admin")]
-        public ActionResult Delete(int id, FormCollection collection)
+         public ActionResult DeleteRole(Guid AccountID, Guid RoleID)
         {
             try
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                MyRoleProvider.DeleteRoleFromAccount(AccountID, RoleID);
+                return RedirectToAction("Index","Account");
             }
             catch
             {
-                return View();
+                var model = MyRoleProvider.GetAccount(AccountID);
+                return View(model);
             }
         }
 
         [Authorize(Roles = "Admin")]
-        public ActionResult AddRole(Guid id)
+        public ActionResult AddRole(Guid AccountID)
         {
-            var model = MyRoleProvider.GetAccount(id);
+            var model = MyRoleProvider.GetAccount(AccountID);
+            model.RoleList = MyRoleProvider.GetNoRolesForUser(AccountID).ToList();
             return View(model);
         }
 
@@ -160,6 +161,20 @@
             {
                 return View(model);
             }
+        }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult Details(Guid id)
+        {
+            var model = MyRoleProvider.GetAccount(id);
+            return View(model);
+        }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult GetAccountRoles(Guid id)
+        {
+            var model = MyRoleProvider.GetRolesForUser(id);
+            return PartialView(model);
         }
     }
 }

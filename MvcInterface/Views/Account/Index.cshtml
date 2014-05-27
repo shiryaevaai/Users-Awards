@@ -20,9 +20,9 @@
             @Html.DisplayFor(modelItem => item.Login)
         </td>
         <td>
-            @Html.ActionLink("AddRole", "AddRole", new { id=item.ID }) |
-            @Html.ActionLink("RemoveRole", "RemoveRole", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("AddRole", "AddRole", new { AccountID=item.ID }) |
+             @Html.ActionLink("DeleteRole", "DeleteRole", new { AccountID=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID })
         </td>
     </tr>
 }

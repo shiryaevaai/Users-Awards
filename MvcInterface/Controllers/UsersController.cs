@@ -10,7 +10,6 @@
     using MvcInterface.Models;
     using System.Web.UI;
 
-
     public class UsersController : Controller
     {
         //
@@ -77,8 +76,6 @@
         [Authorize(Roles = "Admin")]
         public ActionResult Delete(Users model)
         {
-            //if (ModelState.IsValid)
-            //{
             try
             {
                 Users.DeleteUser(model.ID);
@@ -88,9 +85,6 @@
             {
                 return View(model);
             }
-            //}
-
-            // return View(model);
         }
 
         [Authorize(Roles = "User, Admin")]

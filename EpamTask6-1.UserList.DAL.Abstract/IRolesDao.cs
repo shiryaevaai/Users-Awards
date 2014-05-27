@@ -24,5 +24,11 @@
         System.Collections.Generic.IEnumerable<Account> GetAllAccounts();
 
         Account GetAccount(string username);
+
+        Role GetRole(Guid id);
+
+        bool DeleteRoleFromAccount(Guid AccountID, Guid RoleID);
+
+        System.Collections.Generic.IEnumerable<Role> GetNoAccountRoles(Account account);
     }
 }

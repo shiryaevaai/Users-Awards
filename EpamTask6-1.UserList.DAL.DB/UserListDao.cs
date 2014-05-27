@@ -18,8 +18,14 @@
 
         public UserListDao()
         {
-            connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["UsersAwardsDBConnection"].ConnectionString;
-       
+            try
+            {
+                connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["UsersAwardsDBConnection"].ConnectionString;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("connectionString = System.Configuration.ConfigurationManager.ConnectionStrings[\"UsersAwardsDBConnection\"].ConnectionString;", ex);
+            }
         }
         
         public bool AddUser(User user)

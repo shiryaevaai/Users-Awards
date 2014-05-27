@@ -77,6 +77,31 @@
             }
         }
 
+        public Role GetRole(System.Guid id)
+        {
+            using (var con = new SqlConnection(connectionString))
+            {
+                var command = new SqlCommand("SELECT TOP 1 [ID], [RoleName] FROM dbo.[AppRoles] WHERE dbo.[AppRoles].[ID] = @id", con);
+                command.Parameters.Add(new SqlParameter("@id", id));
+
+                con.Open();
+                var reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    return new Role()
+                    {
+                        ID = (System.Guid)reader["ID"],
+                        RoleName = (string)reader["RoleName"],   
+                    };
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
         public Account GetAccount(string username)
         {
             using (var con = new SqlConnection(connectionString))
@@ -142,6 +167,36 @@
             }  
         }
 
+        public System.Collections.Generic.IEnumerable<Role> GetNoAccountRoles(Account account)
+        {
+            var allRoles = this.GetAllRoles().ToList();
+            var userRoles = this.GetAccountRoles(account).ToList();
+            if (userRoles.Count() == 0)
+            {
+                foreach (var role in allRoles)
+                {
+                    yield return role;
+                }
+            }
+            else
+            {
+                foreach (var role in allRoles)
+                {
+                    //if (userRoles.Contains(role))
+                    //{
+                    //    yield return role;
+                    //}
+                    foreach (var role2 in userRoles)
+                    {
+                        if (role.ID != role2.ID)
+                        {
+                            yield return role;
+                        }
+                    }
+                }
+            }
+        }
+
         public System.Collections.Generic.IEnumerable<Role> GetAllRoles()
         {
             using (var con = new SqlConnection(connectionString))
@@ -179,6 +234,21 @@
                     };
                 }
             }
-        }        
+        }
+
+        public bool DeleteRoleFromAccount(System.Guid AccountID, System.Guid RoleID)
+        {
+            using (var con = new SqlConnection(connectionString))
+            {
+                var command = new SqlCommand("DELETE FROM dbo.AppUserRoles WHERE UserID=@UserID AND RoleID=@RoleID", con);
+                command.Parameters.Add(new SqlParameter("@UserID", AccountID));
+                command.Parameters.Add(new SqlParameter("@RoleID", RoleID));
+
+                con.Open();
+                var reader = command.ExecuteNonQuery();
+
+                return reader > 0 ? true : false;
+            }
+        }
     }
 }

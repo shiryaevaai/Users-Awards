@@ -1,0 +1,17 @@
+﻿@model EpamTask6_1.UserList.Entities.Account
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div  class="h4">
+@Html.DisplayFor(model => model.Login)
+</div>
+
+@Html.Action("GetAccountRoles", Model.ID)
+
+<div>
+    @Html.ActionLink("Back to List", "Index", "Account")
+</div>

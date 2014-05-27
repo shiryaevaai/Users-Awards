@@ -334,6 +334,10 @@
     <Content Include="Views\Account\Logout.cshtml" />
     <Content Include="Views\Account\CreateAccount.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Account\Details.cshtml" />
+    <Content Include="Views\Account\GetAccountRoles.cshtml" />
+    <Content Include="Views\Account\DeleteRole.cshtml" />
+    <Content Include="Views\Account\AddRole.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

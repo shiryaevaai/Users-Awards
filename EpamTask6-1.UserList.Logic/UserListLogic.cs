@@ -38,11 +38,20 @@
             //this._save_award_dao = new DAL.Files.AwardListDao();
             //this._cash_award_dao = new DAL.Fake.AwardListDao();
 
-            this._save_user_dao = new DAL.DB.UserListDao();
-            this._cash_user_dao = new DAL.Fake.UserListDao();
-            this._save_award_dao = new DAL.DB.AwardListDao();
+            
+            this._cash_user_dao = new DAL.Fake.UserListDao();           
             this._cash_award_dao = new DAL.Fake.AwardListDao();
-            this._save_roles_dao = new DAL.DB.RolesDao();
+            try
+            {
+                this._save_user_dao = new DAL.DB.UserListDao();
+                this._save_award_dao = new DAL.DB.AwardListDao();
+                this._save_roles_dao = new DAL.DB.RolesDao();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("", ex);
+            }
+
             StartCashing();
 #endif
         }
@@ -359,9 +368,19 @@
             return this._save_roles_dao.GetAccount(username);
         }
 
+        public Role GetRole(System.Guid id)
+        {
+            return this._save_roles_dao.GetRole(id);
+        }
+
         public System.Collections.Generic.IEnumerable<Role> GetAccountRoles(Account account)
         {
             return this._save_roles_dao.GetAccountRoles(account).ToArray(); 
+        }
+
+        public System.Collections.Generic.IEnumerable<Role> GetNoAccountRoles(Account account)
+        {
+            return this._save_roles_dao.GetNoAccountRoles(account).ToArray(); 
         }
 
         public System.Collections.Generic.IEnumerable<Role> GetAllRoles()
@@ -373,6 +392,12 @@
         {
             return this._save_roles_dao.GetAllAccounts().ToArray();
         }
+
+        public bool DeleteRoleFromAccount(Guid AccountID, Guid RoleID)
+        {
+            return this._save_roles_dao.DeleteRoleFromAccount(AccountID, RoleID);
+        }
+
 
     }
 }

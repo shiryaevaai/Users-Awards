@@ -1,0 +1,35 @@
+﻿@model EpamTask6_1.UserList.Entities.Account
+@{
+  
+    var list = Model.RoleList;
+    ViewBag.Title = "AddRole";
+}
+
+<h2>AddRole</h2>
+
+@foreach (var item in list) {
+       
+        using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <fieldset>       
+                <legend></legend>            
+
+                <div class="editor-field">
+                 @Html.DisplayFor(modelItem => item.RoleName)
+                </div>
+
+                @Html.Hidden("AccountID", Model.ID)
+                @Html.Hidden("RoleID", item.ID)
+                @Html.AntiForgeryToken()
+                <p>
+                    <input type="submit" value="Add" />
+                </p>
+            </fieldset>
+        }          
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", "Account")
+</div>
+
