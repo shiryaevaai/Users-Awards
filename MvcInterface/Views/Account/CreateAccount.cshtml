@@ -7,15 +7,10 @@
 
 <h2>Create Account</h2>
 
-@*@using (Html.BeginForm())
+@using (Html.BeginForm())
 {
-    if (!string.IsNullOrWhiteSpace(returnUrl))
-    {
-      @Html.Hidden("returnUrl", returnUrl)
-
-    }
     
-    *@<div>
+    <div>
     @Html.LabelFor(m => m.Username)
     @Html.EditorFor(m => m.Username)
     </div>

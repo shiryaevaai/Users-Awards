@@ -1,13 +1,14 @@
-﻿<span class="text-danger">
+﻿@*<span class="label label-important">*@
     @if (User.Identity != null && User.Identity.IsAuthenticated)
     {
         <span class="glyphicon glyphicon-user"></span>
-        <span> Hello, @User.Identity.Name </span>
-        @Html.ActionLink("Log out", "Logout", "Account")
+        <span class="label label-info"> Hello, @User.Identity.Name </span>
+        <span class="label label-important">@Html.ActionLink("Log out", "Logout", "Account") </span>
     }
     else
     {
-       <span> Hello, guest </span>
-        @Html.ActionLink("Log in", "Login", "Account")
+       <span class="label label-info"> Hello, guest </span>
+       <span class="label label-important"> @Html.ActionLink("Log in", "Login", "Account") </span>
     }
-</span>
+
+    <span class="label label-success">@Html.ActionLink("Create Account", "CreateAccount", "Account")</span>

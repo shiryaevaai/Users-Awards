@@ -8,13 +8,19 @@
     @Html.ActionLink("Users", "Index", "Users")
 </div>
 
-<div>
-    @Html.ActionLink("Awards", "Index", "Awards")
-</div>
+@if (User.IsInRole("Admin") )
+        {
+            <div>
+                @Html.ActionLink("Awards", "Index", "Awards")
+            </div>
+        }
 
-<div>
-    @Html.ActionLink("Admin's page", "Index", "Account")
-</div>
+@if (User.IsInRole("Admin") )
+        {
+            <div>
+            @Html.ActionLink("Admin's page", "Index", "Account")
+            </div>
+        }
 
 @*<div>
     @Html.ActionLink("Files", "Index", "Files")
