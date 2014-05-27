@@ -12,6 +12,10 @@
 
         public Guid AwardID { get; set; }
 
+        public UsersAward()
+        {
+        }
+
         public UsersAward(Guid userID, Guid awardID)
         {
             this.UserID = userID;

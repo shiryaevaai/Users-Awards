@@ -79,7 +79,6 @@ C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\bin
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\bin\System.Web.WebPages.Razor.dll
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\bin\WebGrease.dll
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\bin\EpamTask6-1.UserList.DAL.Abstract.dll
-C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\bin\EpamTask6-1.UserList.DAL.Files.dll
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\bin\EpamTask6-1.UserList.DAL.Fake.dll
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\bin\EpamTask6-1.UserList.Entities.pdb
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\bin\EpamTask6-1.UserList.Logic.pdb
@@ -99,7 +98,6 @@ C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\bin
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\bin\System.Web.WebPages.Deployment.xml
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\bin\System.Web.WebPages.Razor.xml
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\bin\EpamTask6-1.UserList.DAL.Abstract.pdb
-C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\bin\EpamTask6-1.UserList.DAL.Files.pdb
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\bin\EpamTask6-1.UserList.DAL.Fake.pdb
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\bin\ru\EntityFramework.resources.dll
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\bin\ru\EntityFramework.SqlServer.resources.dll
@@ -116,3 +114,5 @@ C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\bin
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\obj\Release\MvcInterface.csprojResolveAssemblyReference.cache
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\obj\Release\MvcInterface.dll
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\obj\Release\MvcInterface.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\bin\EpamTask6-1.UserList.DAL.DB.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcInterface\bin\EpamTask6-1.UserList.DAL.DB.pdb

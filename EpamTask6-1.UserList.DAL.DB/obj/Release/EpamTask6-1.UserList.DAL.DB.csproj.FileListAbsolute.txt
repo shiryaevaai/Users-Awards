@@ -1,1 +1,9 @@
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.DB\obj\Release\EpamTask6-1.UserList.DAL.DB.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.DB\bin\Release\EpamTask6-1.UserList.DAL.DB.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.DB\bin\Release\EpamTask6-1.UserList.DAL.DB.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.DB\bin\Release\EpamTask6-1.UserList.DAL.Abstract.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.DB\bin\Release\EpamTask6-1.UserList.Entities.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.DB\bin\Release\EpamTask6-1.UserList.DAL.Abstract.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.DB\bin\Release\EpamTask6-1.UserList.Entities.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.DB\obj\Release\EpamTask6-1.UserList.DAL.DB.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UserList.DAL.DB\obj\Release\EpamTask6-1.UserList.DAL.DB.pdb

@@ -6,12 +6,15 @@
     using System.Web;
     using System.Web.Security;
 
+    using EpamTask6_1.UserList.Entities;
+    using EpamTask6_1.UserList.Logic;
+
     public class MyRoleProvider : RoleProvider
     {
-
         public override string[] GetAllRoles()
         {
             return new []{"Admin", "User"};
+           // return BusinessLogicHelper._logic.GetAllRoles();
         }
 
         public override string[] GetRolesForUser(string username)

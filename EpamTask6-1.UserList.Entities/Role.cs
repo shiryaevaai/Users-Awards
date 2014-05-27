@@ -6,7 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    class Role
+    public class Role
     {
         public Guid ID { get; set; }
 

@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IAwardListDao.cs" />
+    <Compile Include="IRolesDao.cs" />
     <Compile Include="IUserListDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -8,6 +8,7 @@
     using System.Threading.Tasks;
 
     using EpamTask6_1.UserList.DAL.Abstract;
+    using EpamTask6_1.UserList.DAL.DB;
     using EpamTask6_1.UserList.DAL.Fake;
     using EpamTask6_1.UserList.DAL.Files;
     using EpamTask6_1.UserList.Entities;
@@ -22,6 +23,9 @@
 
         private IAwardListDao _save_award_dao;
 
+        private IRolesDao _save_roles_dao;
+
+        // Add config parameter to check dal
         public UserListLogic()
         {
 #if DEBUG
@@ -29,10 +33,16 @@
             this._cash_user_dao = new DAL.Fake.UserListDao();
             StartCashing();
 #else
-            this._save_user_dao = new DAL.Files.UserListDao();
+            //this._save_user_dao = new DAL.Files.UserListDao();
+            //this._cash_user_dao = new DAL.Fake.UserListDao();
+            //this._save_award_dao = new DAL.Files.AwardListDao();
+            //this._cash_award_dao = new DAL.Fake.AwardListDao();
+
+            this._save_user_dao = new DAL.DB.UserListDao();
             this._cash_user_dao = new DAL.Fake.UserListDao();
-            this._save_award_dao = new DAL.Files.AwardListDao();
+            this._save_award_dao = new DAL.DB.AwardListDao();
             this._cash_award_dao = new DAL.Fake.AwardListDao();
+            this._save_roles_dao = new DAL.DB.RolesDao();
             StartCashing();
 #endif
         }
@@ -306,6 +316,19 @@
             {
                 // Thread cashThread = new Thread(this.UsersAndAwardsCashing); //////
                 // cashThread.Start();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public bool CreateAccount(Account account)
+        {
+            if (this._save_roles_dao.AddAccount(account))
+            {
                 return true;
             }
             else

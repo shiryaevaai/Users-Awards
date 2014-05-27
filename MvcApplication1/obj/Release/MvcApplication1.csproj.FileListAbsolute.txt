@@ -119,3 +119,5 @@ C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\obj\Release\MvcApplication1.csprojResolveAssemblyReference.cache
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\obj\Release\MvcApplication1.dll
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\obj\Release\MvcApplication1.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\bin\EpamTask6-1.UserList.DAL.DB.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\MvcApplication1\bin\EpamTask6-1.UserList.DAL.DB.pdb

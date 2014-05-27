@@ -8,6 +8,7 @@
     using System.Threading.Tasks;
     using EpamTask6_1.UserList.DAL.Abstract;
     using EpamTask6_1.UserList.Entities;
+    using System.Configuration;
 
     public class AwardListDao : IAwardListDao
     {

@@ -47,6 +47,10 @@
       <Project>{50da9c35-ee22-4ac0-a421-f43a04d79794}</Project>
       <Name>EpamTask6-1.UserList.DAL.Abstract</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EpamTask6-1.UserList.DAL.DB\EpamTask6-1.UserList.DAL.DB.csproj">
+      <Project>{1dca325d-7d56-4bf1-9092-9a0517e455db}</Project>
+      <Name>EpamTask6-1.UserList.DAL.DB</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EpamTask6-1.UserList.DAL.Fake\EpamTask6-1.UserList.DAL.Fake.csproj">
       <Project>{03b50103-f86e-40f5-9751-7eea709628a8}</Project>
       <Name>EpamTask6-1.UserList.DAL.Fake</Name>

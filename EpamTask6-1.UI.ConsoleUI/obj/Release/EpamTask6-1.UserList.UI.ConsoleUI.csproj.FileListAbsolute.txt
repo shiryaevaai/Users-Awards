@@ -195,13 +195,13 @@ C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.C
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.dll
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.dll
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.dll
-C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.dll
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Fake.dll
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Entities.pdb
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.Logic.pdb
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Abstract.pdb
-C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Files.pdb
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.Fake.pdb
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UserList.UI.ConsoleUI.csprojResolveAssemblyReference.cache
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.exe
 C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\obj\Release\EpamTask6-1.UI.ConsoleUI.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.DB.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\EpamTask6-1\EpamTask6-1.UI.ConsoleUI\bin\Release\EpamTask6-1.UserList.DAL.DB.pdb

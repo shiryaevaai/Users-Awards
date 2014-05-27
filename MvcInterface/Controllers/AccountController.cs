@@ -59,17 +59,9 @@
         }
 
         //
-        // GET: /Account/Details/5
-
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        //
         // GET: /Account/Create
 
-        public ActionResult Create()
+        public ActionResult CreateAccount()
         {
             return View();
         }
@@ -78,18 +70,15 @@
         // POST: /Account/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult CreateAccount(LoginModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
+                LoginModel.CreateAccount(model);
+                return RedirectToAction("Index", "Home");
+            }
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return View(model);
         }
 
         //

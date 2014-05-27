@@ -16,22 +16,21 @@
 
         public AwardListDao()
         {
-            connectionString = ConfigurationManager.connectionStrings["UsersAwardsDBConnection"].connectionString;
-
+            connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["UsersAwardsDBConnection"].ConnectionString;
         }
 
         public bool AddAward(Award award)
         {
             using (var con = new SqlConnection(connectionString))
             {
-                var command = new SqlCommand("INSERT INTO dbo.Awards (Title) VALUES (@Title)", con);
+                var command = new SqlCommand("INSERT INTO dbo.[Awards] ([ID], [Title]) VALUES (@ID, @Title)", con);
+                command.Parameters.Add(new SqlParameter("@ID", award.ID)); 
                 command.Parameters.Add(new SqlParameter("@Title", award.Title));    
 
                 con.Open();
                 var reader = command.ExecuteNonQuery();
 
                 return reader > 0 ? true : false;
-
             }
         }
 
@@ -39,7 +38,7 @@
         {
             using (var con = new SqlConnection(connectionString))
             {
-                var command = new SqlCommand("INSERT INTO dbo.UserAwards (UserID, AwardID) VALUES (@UserID, @AwardID)", con);
+                var command = new SqlCommand("INSERT INTO dbo.UserAwards ([UserID], [AwardID]) VALUES (@UserID, @AwardID)", con);
                 command.Parameters.Add(new SqlParameter("@UserID", user_id));
                 command.Parameters.Add(new SqlParameter("@AwardID", award_id));
 
@@ -47,7 +46,6 @@
                 var reader = command.ExecuteNonQuery();
 
                 return reader > 0 ? true : false;
-
             }
         }
 
@@ -55,7 +53,7 @@
         {
             using (var con = new SqlConnection(connectionString))
             {
-                var command = new SqlCommand("SELECT TOP 1 ID, Title FROM dbo.Awards WHERE dbo.Awards.ID = @id", con);
+                var command = new SqlCommand("SELECT TOP 1 [ID], [Title] FROM dbo.[Awards] WHERE ID = @id", con);
                 command.Parameters.Add(new SqlParameter("@id", id));
 
                 con.Open();
@@ -67,7 +65,6 @@
                     {
                         ID = (System.Guid)reader["ID"],
                         Title = (string)reader["Title"],
-
                     };
                 }
                 else
@@ -97,7 +94,13 @@
             using (var con = new SqlConnection(connectionString))
             {
                 ///!!!!
-                var command = new SqlCommand("SELECT ID, Title FROM dbo.Awards WHERE dbo.Awards.ID = (SELECT ID FROM dbo.UserAwards WHERE dbo.UserAwards.UserID = @UserID)", con);
+                //var command = new SqlCommand("SELECT ID, Title FROM dbo.Awards WHERE dbo.Awards.ID = (SELECT ID FROM dbo.UserAwards WHERE dbo.UserAwards.UserID = @UserID)", con);
+
+                var command = new SqlCommand("SELECT dbo.Awards.ID, dbo.Awards.Title " +
+                    "FROM dbo.Awards INNER JOIN dbo.UserAwards " +
+                    "ON dbo.Awards.ID = dbo.UserAwards.AwardID " +
+                    "WHERE dbo.UserAwards.UserID = @UserID", con);
+
                 command.Parameters.Add(new SqlParameter("@UserID", user.ID));
                 
                 con.Open();
@@ -105,6 +108,7 @@
 
                 while (reader.Read())
                 {
+                    //  dbo.AppRoles.ID, dbo.AppRoles.RoleName
                     yield return new Award()
                     {
                         ID = (System.Guid)reader["ID"],
@@ -118,7 +122,7 @@
         {
             using (var con = new SqlConnection(connectionString))
             {
-                var command = new SqlCommand("SELECT ID, Title FROM dbo.Awards", con);
+                var command = new SqlCommand("SELECT [ID], [Title] FROM dbo.[Awards]", con);
                 con.Open();
                 var reader = command.ExecuteReader();
 
@@ -135,17 +139,81 @@
 
         public System.Collections.Generic.IEnumerable<UsersAward> GetAllUserAwards()
         {
-            throw new System.NotImplementedException();  
+            using (var con = new SqlConnection(connectionString))
+            {             
+                var command = new SqlCommand("SELECT UserID, AwardID FROM dbo.UserAwards", con);
+
+                con.Open();
+                var reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    //  dbo.AppRoles.ID, dbo.AppRoles.RoleName
+                    yield return new UsersAward()
+                    {
+                        UserID = (System.Guid)reader["UserID"],
+                        AwardID = (System.Guid)reader["AwardID"],
+                    };
+                }
+            }  
         }
 
         public bool SetAllAwards(System.Collections.Generic.IEnumerable<Award> awards)
         {
-            throw new System.NotImplementedException();
+            // 1!!
+            using (var con = new SqlConnection(connectionString))
+            {
+                var command = new SqlCommand("DELETE FROM dbo.Awars", con);
+                con.Open();
+                var reader = command.ExecuteNonQuery();
+                // return reader > 0 ? true : false;
+            }
+
+            try
+            {
+                foreach (var award in awards)
+                {
+                    if (!this.AddAward(award))
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public bool SetAllUserAwards(System.Collections.Generic.IEnumerable<UsersAward> _usersAndAwardsList)
         {
-            throw new System.NotImplementedException();
+            // 1!!
+            using (var con = new SqlConnection(connectionString))
+            {
+                var command = new SqlCommand("DELETE FROM dbo.UserAwards", con);
+                con.Open();
+                var reader = command.ExecuteNonQuery();
+                // return reader > 0 ? true : false;
+            }
+
+            try
+            {
+                foreach (var ua in _usersAndAwardsList)
+                {
+                    if (!this.AddAwardToUser(ua.UserID, ua.AwardID))
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public bool SetAwardImage(System.Guid id)
@@ -185,7 +253,7 @@
             {
                 using (var con = new SqlConnection(connectionString))
                 {
-                    var command = new SqlCommand("SELECT TOP 1 ID, image FROM dbo.AwardImage WHERE dbo.AwardImage.ID = @id", con);
+                    var command = new SqlCommand("SELECT TOP 1 [ID], [Image] FROM dbo.AwardImage WHERE ID = @id", con);
                     command.Parameters.Add(new SqlParameter("@id", id));
 
                     con.Open();
@@ -220,7 +288,7 @@
                 {
                     using (var con = new SqlConnection(connectionString))
                     {
-                        var command = new SqlCommand("DELETE FROM dbo.AwardImage WHERE dbo.AwardImage.ID = @ID", con);
+                        var command = new SqlCommand("DELETE FROM dbo.[AwardImage] WHERE [ID] = @ID", con);
                         command.Parameters.Add(new SqlParameter("@ID", id));
 
                         con.Open();

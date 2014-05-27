@@ -15,25 +15,25 @@
     public class UserListDao : IUserListDao
     {
         private static string connectionString;
+
         public UserListDao()
         {
-            connectionString = ConfigurationManager.connectionStrings["UsersAwardsDBConnection"].connectionString;
-
+            connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["UsersAwardsDBConnection"].ConnectionString;
+       
         }
         
         public bool AddUser(User user)
         {
             using (var con = new SqlConnection(connectionString))
             {
-                var command = new SqlCommand("INSERT INTO dbo.Users (Name, DateOfBirth) VALUES (@Name, @DateOfBirth)", con);
+                var command = new SqlCommand("INSERT INTO dbo.[Users] ([ID], [Name], [DateOfBirth]) VALUES (@ID, @Name, @DateOfBirth)", con);
+                command.Parameters.Add(new SqlParameter("@ID", user.ID));
                 command.Parameters.Add(new SqlParameter("@Name", user.Name));
                 command.Parameters.Add(new SqlParameter("@DateOfBirth", user.DateOfBirth));
 
                 con.Open();
                 var reader = command.ExecuteNonQuery();
-
-                return reader >0 ? true : false;
-                
+                return reader > 0 ? true : false;                
             }
         }
 
@@ -41,7 +41,7 @@
         {
             using (var con = new SqlConnection(connectionString))
             {
-                var command = new SqlCommand("SELECT TOP 1 ID, Name, DateOfBirth FROM dbo.Users WHERE dbo.Users.ID = @id", con);
+                var command = new SqlCommand("SELECT TOP 1 [ID], [Name], [DateOfBirth] FROM dbo.[Users] WHERE [ID] = @id", con);
                 command.Parameters.Add(new SqlParameter("@id", id));
 
                 con.Open();
@@ -67,7 +67,7 @@
         { 
             using (var con = new SqlConnection(connectionString))
             {
-                var command = new SqlCommand("SELECT ID, Name, DateOfBirth FROM dbo.Users", con);
+                var command = new SqlCommand("SELECT [ID], [Name], [DateOfBirth] FROM dbo.[Users]", con);
                 con.Open();
                 var reader = command.ExecuteReader();
 
@@ -87,7 +87,7 @@
         {
             using (var con = new SqlConnection(connectionString))
             {
-                var command = new SqlCommand("SELECT ID, Title FROM dbo.UserImage", con);
+                var command = new SqlCommand("SELECT [ID], [Image] FROM dbo.[UserImage]", con);
                 con.Open();
                 var reader = command.ExecuteReader();
 
@@ -106,7 +106,7 @@
         {
             using (var con = new SqlConnection(connectionString))
             {
-                var command = new SqlCommand("DELETE FROM dbo.Users WHERE dbo.Users.ID = @ID", con);
+                var command = new SqlCommand("DELETE FROM dbo.[Users] WHERE [ID] = @ID", con);
                 command.Parameters.Add(new SqlParameter("@ID", id));
     
                 con.Open();
@@ -118,15 +118,25 @@
 
         public bool SetAllUsers(IEnumerable<User> users)
         {
+            //! delete all
+            using (var con = new SqlConnection(connectionString))
+            {
+                var command = new SqlCommand("DELETE FROM dbo.Users", con);
+                con.Open();
+                var reader = command.ExecuteNonQuery();
+            }
+
             try
             {
-                //List<string> resLines = new List<string>();
-                //foreach (var user in users)
-                //{
-                //    resLines.Add(CreateLineFromUser(user));
-                //}
 
-                //File.WriteAllLines(this._usersFile, resLines);
+                foreach (var user in users)
+                {
+                    if (!this.AddUser(user))
+                    {
+                        return false;
+                    }
+                }
+
                 return true;
             }
             catch
@@ -178,7 +188,7 @@
             {
                 using (var con = new SqlConnection(connectionString))
                 {
-                    var command = new SqlCommand("SELECT TOP 1 ID, image FROM dbo.UserImage WHERE dbo.UserImage.ID = @id", con);
+                    var command = new SqlCommand("SELECT TOP 1 [ID], [Image] FROM dbo.UserImage WHERE [ID] = @id", con);
                     command.Parameters.Add(new SqlParameter("@id", id));
 
                     con.Open();
@@ -214,7 +224,7 @@
                 {
                     using (var con = new SqlConnection(connectionString))
                     {
-                        var command = new SqlCommand("DELETE FROM dbo.UserImage WHERE dbo.UserImage.ID = @ID", con);
+                        var command = new SqlCommand("DELETE FROM dbo.UserImage WHERE [ID] = @ID", con);
                         command.Parameters.Add(new SqlParameter("@ID", id));
 
                         con.Open();
