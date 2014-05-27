@@ -30,6 +30,38 @@
             }
         }
 
+        internal bool TryToLogin(string login, string password)
+        {
+            var account = BusinessLogicHelper._logic.GetAccount(login);
+
+            if (account != null)
+            {
+                if (account.Login == login && account.Password == password)
+                {
+                    FormsAuthentication.RedirectFromLoginPage(login, createPersistentCookie: true);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+            //if (Username == "1" && Password == "1")
+            //{
+            //    FormsAuthentication.RedirectFromLoginPage(Username, createPersistentCookie: true);
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
+        }
+
         public static void Logout()
         {
             FormsAuthentication.SignOut();

@@ -11,23 +11,27 @@
     
     public class AccountController : Controller
     {
-        //
-        // GET: /Account/
-
-        public ActionResult Login(string returnUrl)
+        [Authorize(Roles = "Admin")]
+        public ActionResult Index()
         {
-            ViewBag.ReturnUrl = returnUrl;
+            var model = BusinessLogicHelper._logic.GetAllAccounts();
+            return View(model);
+        }
+
+        public ActionResult Login()
+        {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Login(LoginModel model, string returnUrl)
+        public ActionResult Login(LoginModel model)
         {
+            // returnUrl
             if (ModelState.IsValid)
             {
-                if (model.TryToLogin())
+                if (model.TryToLogin(model.Username, model.Password))
                 {
-                    return Redirect(returnUrl);
+                    return RedirectToAction("Index", "Home");
                 }
                
             }
@@ -60,7 +64,7 @@
 
         //
         // GET: /Account/Create
-
+         
         public ActionResult CreateAccount()
         {
             return View();
@@ -83,7 +87,7 @@
 
         //
         // GET: /Account/Edit/5
-
+         [Authorize(Roles = "Admin")]
         public ActionResult Edit(int id)
         {
             return View();
@@ -93,6 +97,7 @@
         // POST: /Account/Edit/5
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int id, FormCollection collection)
         {
             try
@@ -109,7 +114,7 @@
 
         //
         // GET: /Account/Delete/5
-
+         [Authorize(Roles = "Admin")]
         public ActionResult Delete(int id)
         {
             return View();
@@ -119,6 +124,7 @@
         // POST: /Account/Delete/5
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int id, FormCollection collection)
         {
             try
@@ -130,6 +136,29 @@
             catch
             {
                 return View();
+            }
+        }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult AddRole(Guid id)
+        {
+            var model = MyRoleProvider.GetAccount(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+        public ActionResult AddRole(Guid AccountID, Guid RoleID)
+        {
+            var model = MyRoleProvider.GetAccount(AccountID);
+            if (MyRoleProvider.AddRoleToAccount(AccountID, RoleID))
+            {
+                return RedirectToAction("Index", "Account");
+            }
+            else
+            {
+                return View(model);
             }
         }
     }

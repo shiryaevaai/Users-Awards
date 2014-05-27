@@ -23,13 +23,14 @@
             return View(model);
         }
 
-        [Authorize(Roles="Admin")]
+        [Authorize(Roles="User, Admin")]
         public ActionResult Details(Guid id)
         {
             var model = Users.GetUser(id);
             return View(model);
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -37,6 +38,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create(Users model)
         {
             if (ModelState.IsValid)
@@ -63,6 +65,7 @@
             }
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(Guid id)
         {
             var model = Users.GetUser(id);
@@ -71,6 +74,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(Users model)
         {
             //if (ModelState.IsValid)
@@ -89,6 +93,7 @@
             // return View(model);
         }
 
+        [Authorize(Roles = "User, Admin")]
         public ActionResult UserAwards(Guid id)
         {
             var model = Users.GetUser(id);
@@ -96,12 +101,14 @@
         }
 
         //[ChildActionOnly]
+        [Authorize(Roles = "User, Admin")]
         public ActionResult GetUserAwards(Guid id)
         {
             var model = Users.GetUserAwards(id);
             return PartialView(model);
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult AddAwardToUser(Guid id)
         {
             var model = Users.GetUser(id);
@@ -110,6 +117,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult AddAwardToUser(Guid UserID, Guid AwardID)
         {
             var model = Users.GetUser(UserID);
@@ -128,6 +136,7 @@
             return File(FileWorker.GetFile(path), "image/jpeg", path);
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult UploadImage(Guid id)
         {
             Guid UserID = id;
@@ -136,6 +145,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult UploadImage(Guid id, HttpPostedFileBase image)
         {
             Guid UserID = id;
@@ -155,6 +165,7 @@
         }
 
         //  [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult RemoveImage(Guid id)
         {
              Users user = Users.GetUser(id);

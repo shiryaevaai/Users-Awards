@@ -1,0 +1,30 @@
+﻿@model IEnumerable<EpamTask6_1.UserList.Entities.Account>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Admin's Page</h2>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Login)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Login)
+        </td>
+        <td>
+            @Html.ActionLink("AddRole", "AddRole", new { id=item.ID }) |
+            @Html.ActionLink("RemoveRole", "RemoveRole", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+        </td>
+    </tr>
+}
+
+</table>

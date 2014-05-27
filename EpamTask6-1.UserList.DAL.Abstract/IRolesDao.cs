@@ -22,5 +22,7 @@
         System.Collections.Generic.IEnumerable<Role> GetAllRoles();
         
         System.Collections.Generic.IEnumerable<Account> GetAllAccounts();
+
+        Account GetAccount(string username);
     }
 }

@@ -335,7 +335,43 @@
             {
                 return false;
             }
+        }
 
+        public bool AddRoleToAccount(System.Guid AccountID, System.Guid RoleID)
+        {
+            if (this._save_roles_dao.AddRoleToAccount(AccountID, RoleID))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public Account GetAccount(System.Guid id)
+        {
+            return this._save_roles_dao.GetAccount(id);
+        }
+
+        public Account GetAccount(string username)
+        {
+            return this._save_roles_dao.GetAccount(username);
+        }
+
+        public System.Collections.Generic.IEnumerable<Role> GetAccountRoles(Account account)
+        {
+            return this._save_roles_dao.GetAccountRoles(account).ToArray(); 
+        }
+
+        public System.Collections.Generic.IEnumerable<Role> GetAllRoles()
+        {
+            return this._save_roles_dao.GetAllRoles().ToArray(); 
+        }
+
+        public System.Collections.Generic.IEnumerable<Account> GetAllAccounts()
+        {
+            return this._save_roles_dao.GetAllAccounts().ToArray();
         }
 
     }

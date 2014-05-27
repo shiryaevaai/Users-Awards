@@ -14,7 +14,7 @@
     {
         //
         // GET: /Awards/
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             var model = Awards.GetAllAwards();
@@ -23,7 +23,7 @@
 
         //
         // GET: /Awards/Create
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -33,6 +33,7 @@
         // POST: /Awards/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create(Awards model)
         {
             if (ModelState.IsValid)
@@ -43,7 +44,6 @@
 
             return View(model);
         }
-
 
         [OutputCache(Location = OutputCacheLocation.None, NoStore = true)]
         public JsonResult CheckAwardTitle(string Title)
@@ -65,7 +65,7 @@
             return File(FileWorker.GetFile(path), "image/jpeg", path);
         }
 
-        
+        [Authorize(Roles = "Admin")]
         public ActionResult UploadImage(Guid id)
         {
             Guid AwardID = id;
@@ -74,6 +74,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult UploadImage(Guid id, HttpPostedFileBase image)
         {
             Guid AwardID = id;
@@ -90,8 +91,9 @@
             }
             
             return RedirectToAction("Index");
-        }   
+        }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult RemoveImage(Guid id)
         {
             Awards award = Awards.GetAward(id);
@@ -99,7 +101,5 @@
             Guid AwardID = id;
             return RedirectToAction("Index");            
         }
-      
-
     }
 }

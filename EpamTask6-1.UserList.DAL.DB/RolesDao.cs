@@ -77,6 +77,32 @@
             }
         }
 
+        public Account GetAccount(string username)
+        {
+            using (var con = new SqlConnection(connectionString))
+            {
+                var command = new SqlCommand("SELECT TOP 1 [ID], [Login], [Password] FROM dbo.[AppAccounts] WHERE dbo.[AppAccounts].[Login] = @username", con);
+                command.Parameters.Add(new SqlParameter("@username", username));
+
+                con.Open();
+                var reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    return new Account()
+                    {
+                        ID = (System.Guid)reader["ID"],
+                        Login = (string)reader["Login"],
+                        Password = (string)reader["Password"],
+                    };
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
         public bool DeleteAccount(Account account)
         {
             using (var con = new SqlConnection(connectionString))
