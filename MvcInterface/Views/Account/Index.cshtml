@@ -9,21 +9,27 @@
 <table>
     <tr>
         <th>
+            
             @Html.DisplayNameFor(model => model.Login)
+            
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Login)
-        </td>
-        <td>
-            @Html.ActionLink("AddRole", "AddRole", new { AccountID=item.ID }) |
-             @Html.ActionLink("DeleteRole", "DeleteRole", new { AccountID=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID })
-        </td>
+        @if (User.Identity.Name != item.Login)
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Login)
+            
+            </td>
+            <td>
+                @Html.ActionLink("AddRole", "AddRole", new { AccountID=item.ID }) |
+                @Html.ActionLink("DeleteRole", "DeleteRole", new { AccountID=item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ID })
+            </td>
+        }
     </tr>
 }
 

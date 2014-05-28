@@ -5,18 +5,27 @@
     
 }
 
-<h2>UploadImage</h2>
+<h2>Upload Image</h2>
 
 @using (Html.BeginForm("UploadImage", "Users", FormMethod.Post, new { enctype = "multipart/form-data", id = Model}))
 {
     @Html.AntiForgeryToken()
-    <div>
-    <input type="file" name="image" />    
-    </div>
+  
+    <table class ="table">
+    <tr>
+        <th>
+            <input  type="file" name="image" />   
+        </th> 
+    </tr>
     
-    <div>
-    <input type="submit" value="Load file"/>
-    </div>
+    <tr>
+        <td>
+        <input type="submit" value="Load file"/>
+        </td>
+    </tr>
+    </table>
+
+
 }
 
 <div>
