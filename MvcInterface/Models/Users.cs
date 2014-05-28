@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections;
     using System.ComponentModel.DataAnnotations;
     using System.IO;
     using System.Linq;
@@ -176,29 +177,55 @@
                 }
             }
             else
-            { 
-                //???
+            {
                 foreach (var item in all)
-                {                    
-                    if (list.Contains(item))
+                {
+                    bool contains = false;
+                    foreach (var other in list)
                     {
-                        all.Remove(item);
+                        if ((item.ID == other.ID))
+                        {
+                            contains = true;
+                        }
+                    }
+
+                    if (!contains)
+                    {
+                        Awards award = new Awards(item.ID, item.Title);
+                        if (BusinessLogicHelper._logic.GetAwardImage(award.ID))
+                        {
+                            award.ImageAddr = Path.Combine(Awards.ImageDirectory, award.ID.ToString());
+                        }
+                        else
+                        {
+                            award.ImageAddr = Path.Combine(Awards.ImageDirectory, Awards.DefaultImage);
+                        }
+                        this._awardNotHasList.Add(award);
                     }
                 }
 
-                foreach (var item in all)
-                {
-                    Awards award = new Awards(item.ID, item.Title);
-                    if (BusinessLogicHelper._logic.GetAwardImage(award.ID))
-                    {
-                        award.ImageAddr = Path.Combine(Awards.ImageDirectory, award.ID.ToString());
-                    }
-                    else
-                    {
-                        award.ImageAddr = Path.Combine(Awards.ImageDirectory, Awards.DefaultImage);
-                    }
-                    this._awardNotHasList.Add(award);
-                }
+                //???
+                //foreach (var item in all)
+                //{                    
+                //    if (list.Contains(item))
+                //    {
+                //        all.Remove(item);
+                //    }
+                //}
+
+                //foreach (var item in all)
+                //{
+                //    Awards award = new Awards(item.ID, item.Title);
+                //    if (BusinessLogicHelper._logic.GetAwardImage(award.ID))
+                //    {
+                //        award.ImageAddr = Path.Combine(Awards.ImageDirectory, award.ID.ToString());
+                //    }
+                //    else
+                //    {
+                //        award.ImageAddr = Path.Combine(Awards.ImageDirectory, Awards.DefaultImage);
+                //    }
+                //    this._awardNotHasList.Add(award);
+                //}
             }            
         }
 
@@ -242,6 +269,18 @@
             BusinessLogicHelper._logic.RemoveUserImage(this.ID);
             this.ImageAddr = Path.Combine(Users.ImageDirectory, Users.DefaultImage);
         
+        }
+
+        bool Equals(Users user)
+        {
+            if ((this.ID == user.ID) && (this.DateOfBirth == user.DateOfBirth) && (this.Name == user.Name))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         
     }

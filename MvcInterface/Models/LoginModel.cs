@@ -80,7 +80,7 @@
         {
             var account = new Account()
             {
-                ID = new Guid(),
+                ID = Guid.NewGuid(),
                 Login = model.Username,
                 Password = model.Password,
             };

@@ -11,7 +11,7 @@
     using EpamTask6_1.UserList.Entities;
     using EpamTask6_1.UserList.Logic;
 
-    public class Awards
+    public class Awards : IEquatable<Awards>
     {
         public static string ImageDirectory = AwardImage.AwardImageDirectory;
 
@@ -126,6 +126,46 @@
 
         }
 
+        public bool Equals(Awards award)
+        {
+            if ((this.ID == award.ID) && (this.Title == award.Title))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
+
+        bool IEquatable<Awards>.Equals(Awards other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+
+            if ((this.ID == other.ID) && (this.Title == other.Title))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+                return false;
+
+            Awards personObj = obj as Awards;
+            if (personObj == null)
+                return false;
+            else
+                return Equals(personObj);
+        }  
     }
 }

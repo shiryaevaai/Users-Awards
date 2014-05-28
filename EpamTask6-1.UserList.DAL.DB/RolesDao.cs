@@ -165,7 +165,7 @@
                     };
                 }
             }  
-        }
+        }        
 
         public System.Collections.Generic.IEnumerable<Role> GetNoAccountRoles(Account account)
         {
@@ -182,14 +182,20 @@
             {
                 foreach (var role in allRoles)
                 {
-                    foreach (var role2 in userRoles)
+                    bool contains = false;
+                    foreach (var other in userRoles)
                     {
-                        if (role.ID != role2.ID)
+                        if ((role.ID == other.ID))
                         {
-                            yield return role;
+                            contains = true;
                         }
                     }
-                }
+
+                    if (!contains)
+                    {
+                        yield return role;
+                    }
+                }   
             }
         }
 
