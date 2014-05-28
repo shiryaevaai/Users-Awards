@@ -8,8 +8,7 @@
 <h2>Create Account</h2>
 
 @using (Html.BeginForm())
-{
-    
+{    
     <div>
     @Html.LabelFor(m => m.Username)
     @Html.EditorFor(m => m.Username)
@@ -20,5 +19,6 @@
     @Html.EditorFor(m => m.Password)
     </div>
     
+     @Html.AntiForgeryToken()
     <input type="submit" value="Create" />
 }

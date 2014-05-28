@@ -182,10 +182,6 @@
             {
                 foreach (var role in allRoles)
                 {
-                    //if (userRoles.Contains(role))
-                    //{
-                    //    yield return role;
-                    //}
                     foreach (var role2 in userRoles)
                     {
                         if (role.ID != role2.ID)

@@ -3,16 +3,21 @@
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.IO;
     using System.Linq;
     using System.Web;
+    using System.Web.Mvc;
     using System.Web.Security;
 
     using EpamTask6_1.UserList.Entities;
     using EpamTask6_1.UserList.Logic;
 
+    using MvcInterface.Models;
+
     public class LoginModel
     {
         [Required]
+        [Remote("CheckAccountName", "Account")]
         [StringLength(255, MinimumLength = 1, ErrorMessage = "Длина строки должна быть от 1 до 255 символов")]
         public string Username { get; set; }
 
@@ -81,6 +86,19 @@
             };
             
             BusinessLogicHelper._logic.CreateAccount(account);
+        }
+
+        public static bool CheckAccountName(string Username)
+        {
+            var list = BusinessLogicHelper._logic.GetAllAccounts();
+            foreach (var user in list)
+            {
+                if (user.Login== Username)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

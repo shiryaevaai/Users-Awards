@@ -19,20 +19,29 @@
             return View(model);
         }
 
-        public ActionResult Login()
+        public ActionResult Login(string returnUrl)
         {
+            ViewBag.returnUrl = returnUrl;
             return View();
         }
 
         [HttpPost]
-        public ActionResult Login(LoginModel model)
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(LoginModel model, string returnUrl)
         {
             // returnUrl
             if (ModelState.IsValid)
             {
                 if (model.TryToLogin(model.Username, model.Password))
                 {
-                    return RedirectToAction("Index", "Home");
+                    try
+                    {
+                        return Redirect(returnUrl);
+                    }
+                    catch
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
                 }
                
             }
@@ -52,6 +61,7 @@
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Logout(ConfirmationModel model)
         {
           
@@ -75,6 +85,7 @@
         // POST: /Account/Create
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult CreateAccount(LoginModel model)
         {
             if (ModelState.IsValid)
@@ -92,29 +103,10 @@
         public ActionResult Edit(int id)
         {
             return View();
-        }
-
-        //
-        // POST: /Account/Edit/5
-
-        [HttpPost]
-        [Authorize(Roles = "Admin")]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        }        
 
         // GET: /Account/Delete/5
-         [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteRole(Guid AccountID)
         {
             var model = MyRoleProvider.GetAccount(AccountID);
@@ -125,6 +117,7 @@
         // POST: /Account/Delete/5
         [HttpPost]
         [Authorize(Roles = "Admin")]
+        [ValidateAntiForgeryToken]
          public ActionResult DeleteRole(Guid AccountID, Guid RoleID)
         {
             try
@@ -175,6 +168,21 @@
         {
             var model = MyRoleProvider.GetRolesForUser(id);
             return PartialView(model);
+        }
+
+        [OutputCache(Location = OutputCacheLocation.None, NoStore = true)]
+        public JsonResult CheckAccountName(string Username)
+        {
+            var result = LoginModel.CheckAccountName(Username);
+
+            if (result)
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json("Account with this Username already exists.", JsonRequestBehavior.AllowGet);
+            }
         }
     }
 }

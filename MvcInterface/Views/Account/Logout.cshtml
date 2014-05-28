@@ -8,6 +8,7 @@
 
 @using (Html.BeginForm())
 {
+     @Html.AntiForgeryToken()
     <button name="Confirm" value="true" >Yes</button>
     <button name="Confirm" value="false" >No</button>
 }

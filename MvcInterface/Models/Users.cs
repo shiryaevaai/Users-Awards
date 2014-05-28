@@ -27,9 +27,11 @@
         [Remote("CheckUserName", "Users")]
         public string Name { get; set; }
 
+
+        //!DATE
         [Required(ErrorMessage = "Необходимо ввести дату рождения пользователя!")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd'/'MM'/'yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Дата рождения")]
         public DateTime DateOfBirth { get; set; }
 
@@ -154,28 +156,50 @@
         {
             this._awardNotHasList.Clear();
             User nu = BusinessLogicHelper._logic.GetUserByID(id);
-            var list = BusinessLogicHelper._logic.GetUserAwards(nu);
-            var all = BusinessLogicHelper._logic.GetAllAwards();
-            foreach (var item in all)
+            List<Award> list = BusinessLogicHelper._logic.GetUserAwards(nu).ToList();
+            List<Award> all = BusinessLogicHelper._logic.GetAllAwards().ToList();
+
+            if (list.Count() == 0)
             {
-                if (!list.Contains(item))
+                foreach (var item in all)
                 {
                     Awards award = new Awards(item.ID, item.Title);
                     if (BusinessLogicHelper._logic.GetAwardImage(award.ID))
                     {
-                        //award.ImageAddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "AwardImages", award.ID.ToString());
-                         award.ImageAddr = Path.Combine(Awards.ImageDirectory, award.ID.ToString());
+                        award.ImageAddr = Path.Combine(Awards.ImageDirectory, award.ID.ToString());
                     }
                     else
                     {
-                        //award.ImageAddr = Awards.DefaultImage;
-                         award.ImageAddr = Path.Combine(Awards.ImageDirectory, Awards.DefaultImage);
+                        award.ImageAddr = Path.Combine(Awards.ImageDirectory, Awards.DefaultImage);
                     }
                     this._awardNotHasList.Add(award);
                 }
             }
+            else
+            { 
+                //???
+                foreach (var item in all)
+                {                    
+                    if (list.Contains(item))
+                    {
+                        all.Remove(item);
+                    }
+                }
 
-            //return _awardNotHasList;
+                foreach (var item in all)
+                {
+                    Awards award = new Awards(item.ID, item.Title);
+                    if (BusinessLogicHelper._logic.GetAwardImage(award.ID))
+                    {
+                        award.ImageAddr = Path.Combine(Awards.ImageDirectory, award.ID.ToString());
+                    }
+                    else
+                    {
+                        award.ImageAddr = Path.Combine(Awards.ImageDirectory, Awards.DefaultImage);
+                    }
+                    this._awardNotHasList.Add(award);
+                }
+            }            
         }
 
         public static bool CheckUserName(string username)

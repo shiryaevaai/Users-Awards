@@ -25,5 +25,6 @@
     @Html.EditorFor(m => m.Password)
     </div>
     
+    @Html.AntiForgeryToken()
     <input type="submit" value="Log in" />
 }

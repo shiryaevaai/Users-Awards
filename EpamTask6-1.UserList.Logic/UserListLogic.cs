@@ -59,10 +59,10 @@
         public bool AddUser(string name, DateTime dateOfBirth)
         {
             var user = new User(name, dateOfBirth);
-            if (this._cash_user_dao.AddUser(user))
+            if (this._save_user_dao.AddUser(user))
             {
-                Thread cashThread = new Thread(this.UsersCashing);
-                cashThread.Start(); 
+                //Thread cashThread = new Thread(this.UsersCashing);
+                //cashThread.Start(); 
                 return true;
             }
             else
@@ -73,10 +73,10 @@
 
         public bool AddUser(User user)
         {
-            if (this._cash_user_dao.AddUser(user))
+            if (this._save_user_dao.AddUser(user))
             {
-                Thread cashThread = new Thread(this.UsersCashing);
-                cashThread.Start();
+                //Thread cashThread = new Thread(this.UsersCashing);
+                //cashThread.Start();
                 return true;
             }
             else
@@ -87,24 +87,28 @@
 
         public User GetUserByID(Guid id)
         {
-            return this._cash_user_dao.GetUser(id);
+            return this._save_user_dao.GetUser(id);
         }
 
         public User[] GetAllUsers()
         {
-            return this._cash_user_dao.GetAllUsers().ToArray(); 
+            return this._save_user_dao.GetAllUsers().ToArray(); 
         }
 
 
         public bool DeleteUser(User user)
         {
-            if ((this._cash_user_dao.DeleteUser(user.ID))&&(this._cash_award_dao.DeleteUserAwards(user)))
-            {                
-                Thread cashThread1 = new Thread(this.UsersCashing);
-                cashThread1.Start();
+            //if ((this._cash_user_dao.DeleteUser(user.ID))&&(this._cash_award_dao.DeleteUserAwards(user)))
+            //{                
+            //    Thread cashThread1 = new Thread(this.UsersCashing);
+            //    cashThread1.Start();
 
-                Thread cashThread2 = new Thread(this.UsersAndAwardsCashing);
-                cashThread2.Start();
+            //    Thread cashThread2 = new Thread(this.UsersAndAwardsCashing);
+            //    cashThread2.Start();
+            //    return true;
+            //}
+            if (this._save_user_dao.DeleteUser(user.ID)) 
+            {
                 return true;
             }
             else
@@ -117,10 +121,10 @@
         {
             var award = new Award(title);
 
-            if (this._cash_award_dao.AddAward(award))
+            if (this._save_award_dao.AddAward(award))
             {
-                Thread cashThread = new Thread(this.AwardsCashing);
-                cashThread.Start();
+                //Thread cashThread = new Thread(this.AwardsCashing);
+                //cashThread.Start();
                 return true;
             }
             else
@@ -131,10 +135,10 @@
 
         public bool AddAward(Award award)
         {
-            if (this._cash_award_dao.AddAward(award))
+            if (this._save_award_dao.AddAward(award))
             {
-                Thread cashThread = new Thread(this.AwardsCashing);
-                cashThread.Start();
+                //Thread cashThread = new Thread(this.AwardsCashing);
+                //cashThread.Start();
                 return true;
             }
             else
@@ -145,35 +149,35 @@
 
         public Award GetAwardByID(Guid id)
         {
-            return this._cash_award_dao.GetAward(id);
+            return this._save_award_dao.GetAward(id);
         }
 
         public Award[] GetAllAwards()
         {
-            return this._cash_award_dao.GetAllAwards().ToArray(); 
+            return this._save_award_dao.GetAllAwards().ToArray(); 
         }
 
         public Award[] GetUserAwards(User user)
         {
-            return this._cash_award_dao.GetUserAwards(user).ToArray();
+            return this._save_award_dao.GetUserAwards(user).ToArray();
         }
 
         public bool AddAwardToUser(Guid userID, Guid awardID) 
         {
-            if (this._cash_user_dao.GetUser(userID) == null)
+            if (this._save_user_dao.GetUser(userID) == null)
             {
                 throw new ArgumentException("Пользователя с данным ID не существует");
             }
 
-            if (this._cash_award_dao.GetAward(awardID) == null)
+            if (this._save_award_dao.GetAward(awardID) == null)
            {
                throw new ArgumentException("Награды с данным ID не существует");
            }
 
-            if (this._cash_award_dao.AddAwardToUser(userID, awardID))
+            if (this._save_award_dao.AddAwardToUser(userID, awardID))
             {
-                Thread cashThread = new Thread(this.UsersAndAwardsCashing);
-                cashThread.Start();
+                //Thread cashThread = new Thread(this.UsersAndAwardsCashing);
+                //cashThread.Start();
                 return true;
             }
             else
@@ -242,13 +246,20 @@
                 throw new ArgumentException("Пользователя с данным ID не существует");
             }
 
-            if (this._save_user_dao.GetUserImage(userID))
+            try
             {
-                //Thread cashThread = new Thread(this.UsersAndAwardsCashing);///////
-                //cashThread.Start();
-                return true;
+                if (this._save_user_dao.GetUserImage(userID))
+                {
+                    //Thread cashThread = new Thread(this.UsersAndAwardsCashing);///////
+                    //cashThread.Start();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            catch
             {
                 return false;
             }
@@ -311,7 +322,6 @@
             {
                 return false;
             }
-
         }
 
         public bool RemoveAwardImage(Guid awardID)
@@ -331,7 +341,6 @@
             {
                 return false;
             }
-
         }
 
         public bool CreateAccount(Account account)
@@ -397,7 +406,5 @@
         {
             return this._save_roles_dao.DeleteRoleFromAccount(AccountID, RoleID);
         }
-
-
     }
 }

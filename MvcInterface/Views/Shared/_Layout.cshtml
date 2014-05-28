@@ -59,18 +59,22 @@
         <script src="~/Scripts/jquery-ui-1.10.4.min.js"></script>
         <script src="~/Scripts/bootstrap.js"></script>
         <script src="~/Scripts/bootstrap-datepicker.js"></script>
+        <script src="~/Scripts/modernizr-2.7.2.js"></script>
         
         @RenderSection("scripts", required: false)
 
         <script type="text/javascript">
             $(function () {
-                if (!Modernizr.inputtypes.date) {
-                    $(function () {
-                        $("input[type='date']")
-                                    .datepicker({ dateFormat: "dd/mm/yyyy" })
-                                    .get(0)
-                                    .setAttribute("type", "text");
-                    })
+                if (Modernizr.meter) {
+                    if (!Modernizr.inputtypes.date) {
+                        $(function () {
+                            $("input[type='date']")
+                                        //.datepicker({ dateFormat: "dd/mm/yyyy" })
+                                        .datepicker({ dateFormat: "dd/mm/yyyy" })
+                                        .get(0)
+                                        .setAttribute("type", "text");
+                        });
+                    }
                 }
             });
         </script>

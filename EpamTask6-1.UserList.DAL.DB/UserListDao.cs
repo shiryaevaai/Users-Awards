@@ -32,7 +32,15 @@
         {
             using (var con = new SqlConnection(connectionString))
             {
-                var command = new SqlCommand("INSERT INTO dbo.[Users] ([ID], [Name], [DateOfBirth]) VALUES (@ID, @Name, @DateOfBirth)", con);
+                //var command = new SqlCommand("INSERT INTO dbo.[Users] ([ID], [Name], [DateOfBirth]) VALUES (@ID, @Name, @DateOfBirth)", con);
+                //command.Parameters.Add(new SqlParameter("@ID", user.ID));
+                //command.Parameters.Add(new SqlParameter("@Name", user.Name));
+                //command.Parameters.Add(new SqlParameter("@DateOfBirth", user.DateOfBirth));
+
+                var command = new SqlCommand("dbo.AddUser", con)
+                {
+                    CommandType=System.Data.CommandType.StoredProcedure,
+                };
                 command.Parameters.Add(new SqlParameter("@ID", user.ID));
                 command.Parameters.Add(new SqlParameter("@Name", user.Name));
                 command.Parameters.Add(new SqlParameter("@DateOfBirth", user.DateOfBirth));
@@ -112,7 +120,12 @@
         {
             using (var con = new SqlConnection(connectionString))
             {
-                var command = new SqlCommand("DELETE FROM dbo.[Users] WHERE [ID] = @ID", con);
+               // var command = new SqlCommand("DELETE FROM dbo.[Users] WHERE [ID] = @ID", con);
+                var command = new SqlCommand("dbo.DeleteUser", con)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure,
+                };
+
                 command.Parameters.Add(new SqlParameter("@ID", id));
     
                 con.Open();
@@ -154,10 +167,10 @@
         public bool SetUserImage(Guid id)
         {
             // wrong id, handle exception
-            if (this.GetUser(id) == null)
-            {
-                return false;
-            }
+            //if (this.GetUser(id) == null)
+            //{
+            //    return false;
+            //}
 
             try
             {
@@ -185,10 +198,10 @@
         public bool GetUserImage(Guid id)
         {
             // wrong id, handle exception
-            if (this.GetUser(id) == null)
-            {
-                return false;
-            }
+            //if (this.GetUser(id) == null)
+            //{
+            //    return false;
+            //}
 
             try
             {

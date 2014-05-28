@@ -23,7 +23,12 @@
         {
             using (var con = new SqlConnection(connectionString))
             {
-                var command = new SqlCommand("INSERT INTO dbo.[Awards] ([ID], [Title]) VALUES (@ID, @Title)", con);
+                //var command = new SqlCommand("INSERT INTO dbo.[Awards] ([ID], [Title]) VALUES (@ID, @Title)", con);
+                var command = new SqlCommand("dbo.AddAward", con)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure,
+                };
+
                 command.Parameters.Add(new SqlParameter("@ID", award.ID)); 
                 command.Parameters.Add(new SqlParameter("@Title", award.Title));    
 
@@ -96,10 +101,15 @@
                 ///!!!!
                 //var command = new SqlCommand("SELECT ID, Title FROM dbo.Awards WHERE dbo.Awards.ID = (SELECT ID FROM dbo.UserAwards WHERE dbo.UserAwards.UserID = @UserID)", con);
 
-                var command = new SqlCommand("SELECT dbo.Awards.ID, dbo.Awards.Title " +
-                    "FROM dbo.Awards INNER JOIN dbo.UserAwards " +
-                    "ON dbo.Awards.ID = dbo.UserAwards.AwardID " +
-                    "WHERE dbo.UserAwards.UserID = @UserID", con);
+                //var command = new SqlCommand("SELECT dbo.Awards.ID, dbo.Awards.Title " +
+                //    "FROM dbo.Awards INNER JOIN dbo.UserAwards " +
+                //    "ON dbo.Awards.ID = dbo.UserAwards.AwardID " +
+                //    "WHERE dbo.UserAwards.UserID = @UserID", con);
+
+                var command = new SqlCommand("dbo.GetUserAwards", con)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure,
+                };
 
                 command.Parameters.Add(new SqlParameter("@UserID", user.ID));
                 
@@ -141,7 +151,12 @@
         {
             using (var con = new SqlConnection(connectionString))
             {             
-                var command = new SqlCommand("SELECT UserID, AwardID FROM dbo.UserAwards", con);
+                //var command = new SqlCommand("SELECT UserID, AwardID FROM dbo.UserAwards", con);
+
+                var command = new SqlCommand("dbo.GetAllUserAwards", con)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure,
+                };
 
                 con.Open();
                 var reader = command.ExecuteReader();
